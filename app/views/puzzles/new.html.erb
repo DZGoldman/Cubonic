@@ -1,0 +1,31 @@
+<h1>Puzzle#new</h1>   <%= render partial: 'bar' %>
+
+<%# where the new encrypted pattern will be dumped for submition %>
+<div id="new_pattern"> </div>
+
+
+
+<div id="submit" class="button">Submit  </div>
+
+<%= link_to "back to the puzzles", puzzles_path %>
+
+
+<%= form_for(@puzzle) do |f| %>
+  <ul>
+  <% @puzzle.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+
+  </ul>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+
+    <%= f.label :pattern %>
+
+    <%= render partial: 'grid' %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

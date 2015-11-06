@@ -1,0 +1,9 @@
+<h1>show a puzzle</h1>   <%= render partial: 'bar' %>
+<p>ONE Puzzleerb</p>
+
+<%# put pattern in a hidden div so javascript can access it %>
+  <div id=pattern> <%=@puzzle.pattern %> </div>
+
+
+<%= render partial: 'grid' %>
+<%= link_to "back to the puzzles", puzzles_path %>

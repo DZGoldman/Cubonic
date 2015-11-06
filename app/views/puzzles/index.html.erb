@@ -1,0 +1,14 @@
+<h1>Puzzle index page</h1>
+
+  <%= render partial: 'bar' %>
+  <% if logged_in? %>
+    <%= link_to " make a new Puzzle yo?", new_puzzle_path %>
+  <% end %>
+
+<ul id="puzzles">
+  <% @puzzles.each do |puzzle| %>
+    <li>
+      <%=link_to puzzle.pattern, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+    </li>
+  <% end %>
+</ul>
