@@ -30,9 +30,11 @@ ActiveRecord::Schema.define(version: 20151105170627) do
   create_table "puzzles", force: :cascade do |t|
     t.text     "pattern"
     t.text     "notes"
+    t.integer  "best_solution"
+    t.integer  "clicks_created"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "puzzles", ["user_id"], name: "index_puzzles_on_user_id", using: :btree
