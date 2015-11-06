@@ -1,9 +1,16 @@
 <h1>show a puzzle</h1>   <%= render partial: 'bar' %>
-<p>ONE Puzzleerb</p>
+<p><%= @puzzle.notes %></p>
 
 <%# put pattern in a hidden div so javascript can access it %>
-  <div id=pattern> <%=@puzzle.pattern %> </div>
+  <div id="pattern"><%=@puzzle.pattern %></div>
 
 
+<div id="boards">
 <%= render partial: 'grid' %>
+<%= render partial: 'staticgrid' %>
+
+</div>
+
+<div>
 <%= link_to "back to the puzzles", puzzles_path %>
+</div>
