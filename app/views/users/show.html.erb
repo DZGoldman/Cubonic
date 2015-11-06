@@ -1,4 +1,10 @@
-<h1>Hi <%= @user.user_name%></h1>    
-<p>GUYZZZZ THIS IS MY PROF PAGE</p>
+<h1><%= @user.user_name%>'s Page</h1>
+<img src="<%=@user.profile_pic %>" alt="" />
+
+<% @user.puzzles.each do |puzzle| %>
+  <li>
+    <%=link_to puzzle.pattern, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+  </li>
+<% end %>
 
 <%= link_to "back to the puzzles", puzzles_path %>

@@ -15,17 +15,15 @@
   <% @puzzle.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
-
   </ul>
   <p>
     <%= f.label :notes %><br />
     <%= f.text_area :notes %>
-
-    <%= f.label :pattern %>
-
-    <%= render partial: 'grid' %>
-
+  </p>
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+
+  <%= render partial: 'grid' %>

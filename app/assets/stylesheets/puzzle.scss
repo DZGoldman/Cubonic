@@ -1,8 +1,43 @@
 // Place all the styles related to the puzzle controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-body{
+body {
   background-color: black;
   color: blue;
+}
+.box {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.row {
+  display: inline-block;
+}
+#click-board,
+#static-board {
+  width: 550px;
+  font-size: 0;
+  background: black;
+}
+#static-board {
+  float: right;
+}
+#boards {
+  float: left;
+}
+
+#pattern{
+  display:none;
+}
+.button {
+  width: 80px;
+  height: 40px;
+  background: pink;
+  margin-top: 10px;
+  color: purple;
+  font-size: 20px;
+}
+#buttons {
+  display: inline;
 }
