@@ -1,4 +1,9 @@
-<h1>Puzzle#edit</h1>   <%= render partial: 'bar' %>
-<p>Find me in app/views/puzzle/edit.html.erb</p>
+<h1>Edit Your puzzle</h1>   <%= render partial: 'bar' %>
 
+
+  <div id="pattern"><%=@puzzle.pattern %></div>
+
+
+<%= render partial: 'grid' %>
+<%= render partial: 'staticgrid' %>
 <%= link_to "back to the puzzles", puzzles_path %>

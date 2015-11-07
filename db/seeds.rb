@@ -25,6 +25,11 @@ puzzles= Puzzle.create([
 
 ])
 
+
+User.create([
+{user_name: "dzgoldman", profile_pic: "http://www.fillmurray.com/g/100/100", email: "dzgoldman@wesleynan.edu", is_admin:true, password_digest: "hx5617"}
+
+])
 # puzzles= Puzzle.CreatePuzzles
 #
 # comments= Comment.create([

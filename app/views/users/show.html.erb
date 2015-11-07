@@ -3,7 +3,14 @@
 
 <% @user.puzzles.each do |puzzle| %>
   <li>
-    <%=link_to puzzle.pattern, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+    <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+    <% unless current_user==nil %>
+      <%if current_user==@user || current_user.is_admin %>
+        <%= link_to "Delete This Puzzle!", puzzle_path(puzzle), method: :delete %> <br>
+      <% end %>
+    <%end%>
+
+
   </li>
 <% end %>
 

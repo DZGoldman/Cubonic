@@ -8,8 +8,13 @@ class PuzzlesController < ApplicationController
   end
 
   def edit
+    @puzzle=Puzzle.find(params[:id])
   end
 
+  def update
+
+  end
+  
   def new
     @puzzle=Puzzle.new
   end
@@ -20,6 +25,18 @@ class PuzzlesController < ApplicationController
     #@puzzle.clicks_created= 3
     @puzzle.save
     redirect_to puzzle_path(@puzzle)
+  end
+
+  def win
+
+  end
+
+  def destroy
+    @puzzle=Puzzle.find(params[:id])
+    @puzzle.delete
+    flash.now[:notice] = "puzzle deleted"
+
+    redirect_to puzzles_path
   end
 
   private
