@@ -130,6 +130,11 @@ $(document).ready(function() {
     } else {
       console.log("you didn't win yet")
     }
+
+    //for now, when submit is clicked, encrypt the puzzle and dump it in an html div
+      var encryptedGrid = encrypt()
+      $('#puzzle_pattern').text(encryptedGrid)
+      $('#puzzle_clicks_created').text(clickCounter)
   });
 
   //clear board
@@ -151,10 +156,7 @@ $(document).ready(function() {
   })
 
 
-  //for now, when submit is clicked, encrypt the puzzle and dump it in an html div
-  $('#submit').on('click', function() {
-    var encryptedGrid = encrypt()
-    $('#new_pattern').text(encryptedGrid)
-  })
+
+
 
 });

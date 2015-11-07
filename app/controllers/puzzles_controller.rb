@@ -24,6 +24,6 @@ class PuzzlesController < ApplicationController
 
   private
   def puzzle_params
-    params.require(:puzzle).permit(:notes)
+    params.require(:puzzle).permit(:notes, :pattern, :clicks_created)
   end
 end
