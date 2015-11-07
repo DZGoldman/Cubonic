@@ -12,9 +12,14 @@ class PuzzlesController < ApplicationController
   end
 
   def update
+    @puzzle= Puzzle.find(params[:id])
+    @puzzle.update(puzzle_params)
+    @puzzle.user_id=current_user.id
+    redirect_to puzzle_path(@puzzle)
+
 
   end
-  
+
   def new
     @puzzle=Puzzle.new
   end

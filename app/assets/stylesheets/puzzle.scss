@@ -15,7 +15,7 @@ body {
   display: inline-block;
 }
 #click-board,
-#static-board {
+#static-board, #edit-board {
   width: 550px;
   font-size: 0;
   background: black;
@@ -23,9 +23,15 @@ body {
 #static-board {
   float: right;
 }
+
+
+#editboard{
+  float: left;
+}
 #boards {
   float: left;
 }
+
 
 #pattern{
   display:none;

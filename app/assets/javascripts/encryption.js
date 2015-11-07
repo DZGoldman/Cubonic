@@ -23,10 +23,10 @@ var encryptStatic = function() {
   return encryptedGrid
 };
 
-var decrypt = function(string) {
+var decrypt = function(string, grid) {
   var array = string.split("")
 
   array.forEach(function(number, index) {
-    $($('.static-box')[index]).css("background-color", colors[number])
+    $(grid[index]).css("background-color", colors[number])
   })
 }
