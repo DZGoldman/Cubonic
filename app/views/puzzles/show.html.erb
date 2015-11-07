@@ -1,6 +1,6 @@
 <h1>show a puzzle</h1>   <%= render partial: 'bar' %>
 <p><%= @puzzle.notes %></p>
-
+<p> Made in<%= @puzzle.clicks_created %> clicks </p>
 <%# put pattern in a hidden div so javascript can access it %>
   <div id="pattern"><%=@puzzle.pattern %></div>
 

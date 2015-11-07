@@ -17,6 +17,14 @@ var color2 = "rgb(173, 216, 230)"
 var color3 = "rgb(0, 0, 255)"
 var color4 = "rgb(0, 0, 0)"
 
+//
+// $.ajax({
+//         url : "/puzzles/new",
+//         type : "post",
+//         data : { color1: JSON.(color1) }
+//     );
+
+
 var colors = [color1, color2, color3, color4]
 var clickCounter = 0;
 
@@ -137,7 +145,7 @@ $(document).ready(function() {
       $('.box').css("border", "1px solid black");
       border = true
     } else {
-      $('.click-box').css("border", "")
+      $('.box').css("border", "")
       border = false;
     }
   })

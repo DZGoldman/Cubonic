@@ -17,6 +17,7 @@ class PuzzlesController < ApplicationController
   def create
     @puzzle= Puzzle.new puzzle_params
     @puzzle.user_id = current_user.id
+    #@puzzle.clicks_created= 3
     @puzzle.save
     redirect_to puzzle_path(@puzzle)
   end
