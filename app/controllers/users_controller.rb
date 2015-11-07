@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = "Welcome to my nightmare"
-      redirect_to puzzles_path
+      redirect_to login_path
     else
       render new_user_path
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :email, :password_digest, :password_digest_confirmation, :profile_pic)
+    params.require(:user).permit(:user_name, :email, :password, :password_confirmation, :profile_pic)
   end
 
 

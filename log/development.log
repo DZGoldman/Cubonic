@@ -17652,3 +17652,945 @@ ActionView::MissingTemplate (Missing template puzzles/create, application/create
   Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (261.9ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:09:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 2199ms (Views: 2199.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:09:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MtV0JoFdZeE0cSlAoUzC66LritlMHabamJA26dH/sdjlA2mPMT3x9tKTuMdBh5NYwIRgW8pcfmgudZBzjlPbkA==", "session"=>{"user_name"=>"dzack", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "dzack"]]
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 222ms (Views: 95.1ms | ActiveRecord: 40.2ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:09:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S83KpvJiVCx5ZLT2BHF1AcOLMeUjTF35DbYoLNUl2m2cG9cPQgLAO5+GJXHkuiSyoeTbZ6UNhUu7U462iomwJQ==", "session"=>{"user_name"=>"DZack", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "DZack"]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 39.4ms)
+
+BCrypt::Errors::InvalidHash (invalid hash):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (139.2ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (134.7ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (420.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:13:12 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (434.4ms)
+Completed 200 OK in 506ms (Views: 505.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:13:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3XGN7qOWdu6yc4ZAgyi6mUjOXkNI4EhXUrLk3DhEf/EKp5BHE/bi+VSRF8dj4+sqKqG0wc6hkOXkV0JGZ+gVuQ==", "user"=>{"user_name"=>"Dannyg", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"http://www.placecage.com/c/200/300", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (43.8ms)[0m  BEGIN
+  [1m[36m (14.3ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 276ms (Views: 211.5ms | ActiveRecord: 58.1ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:13:55 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4fNNiKOOc1FaiXI8kuayx0LqR2Iee7G2hihrowa4DSoUdCfku6t2qOItE8SgMt4f2RDnw44NnRs/Qc007aKfA==", "user"=>{"user_name"=>"Dannyg", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"http://www.placecage.com/c/200/300", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:14:06 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GEz8snFVu/M1h5CsDXaj5DHzaNemzR6D8mFKOv5T6EzPmuEbwTUv5NNlASvtvfJXU5yCVSCMxjFEhOygof+CBA==", "user"=>{"user_name"=>"Dannyg", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"http://www.placecage.com/c/200/300", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Unpermitted parameters: password, password_confirmation
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 64ms (Views: 57.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:16:08 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3XGN7qOWdu6yc4ZAgyi6mUjOXkNI4EhXUrLk3DhEf/EKp5BHE/bi+VSRF8dj4+sqKqG0wc6hkOXkV0JGZ+gVuQ==", "user"=>{"user_name"=>"Dannyg", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"http://www.placecage.com/c/200/300", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (74.9ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "Dannyg"], ["email", "dzgoldman@wesleyan.edu"], ["password_digest", "$2a$10$V9jsUh25aRfPS7TygyQl8.8xGiusnD2zZNcDifSbIt9VzeXZtWKV."], ["profile_pic", "http://www.placecage.com/c/200/300"], ["created_at", "2015-11-07 04:16:08.726152"], ["updated_at", "2015-11-07 04:16:08.726152"]]
+  [1m[35m (21.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 251ms (ActiveRecord: 98.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:16:08 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (3.6ms)
+  [1m[35mPuzzle Load (0.7ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 294ms (Views: 149.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:17:10 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (3.0ms)
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/comment.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/puzzle.self-8983f2d50a073d73020ba15dfe1443bdf507e5119829f9f12f47b9fe71461b99.css?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/comment.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/puzzle.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/assets/application.self-d831493cead7c88ed803b9d84e50092473879855e7f408e3a90267c9d01ece2e.js?body=1" for ::1 at 2015-11-06 23:17:10 -0500
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:17:17 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.5ms)
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/puzzle.self-8983f2d50a073d73020ba15dfe1443bdf507e5119829f9f12f47b9fe71461b99.css?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/comment.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/puzzle.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/comment.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/assets/application.self-d831493cead7c88ed803b9d84e50092473879855e7f408e3a90267c9d01ece2e.js?body=1" for ::1 at 2015-11-06 23:17:17 -0500
+
+
+Started GET "/logout" for ::1 at 2015-11-06 23:17:20 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:17:20 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:17:27 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.5ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:17:31 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:17:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ys9c8KajohXCIE5pAWmiFeXulHJ1qQFY2+Ln1hUBC9O1GUFZFsM2AiTC3+7hovOmh4F+8PPo2eptB0FMSq1hmw==", "session"=>{"user_name"=>"dzack", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "dzack"]]
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 60ms (Views: 56.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:17:36 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (2.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:17:39 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 85ms (Views: 84.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:17:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"slOgoML03DnouydBNnt3ku/QInhcDBRxlfWYTMWL9K5lhb0JcpRILg5ZtsbWsCYhjb/I+tpNzMMjED7Wmiee5g==", "user"=>{"user_name"=>"Dannyg", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"placecage.com/c/200/200", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "Dannyg"], ["email", "dzgoldman@wesleyan.edu"], ["password_digest", "$2a$10$C9UoGunI1LtNOVLHxTDPceYJ6Kt2qysBBFuN3Ug.1tc7cwcgMzXse"], ["profile_pic", "placecage.com/c/200/200"], ["created_at", "2015-11-07 04:17:58.665950"], ["updated_at", "2015-11-07 04:17:58.665950"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 100ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:17:58 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 60ms (Views: 58.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:18:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 80ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ZEwAIYmoJXWgQQwVWpAGHZzJ+A2fdaSEv+xhjiAhzMORy2pNkY0gjBjlbe1oRGrFBzNYrA8DiCkGhccZyztew==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Dannyg"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 95ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:18:13 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered puzzles/_bar.html.erb (2.2ms)
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 68ms (Views: 66.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:18:23 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UmBlT96xhnhzJTnLyjJLTybfGhMYa54h8ptvpwZiw4KFtnjmbtESb5XHqEwq+Rr8RLDwkZ4qRpNEfsk9Wc6pyg==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "Dannyg"]]
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 148ms (Views: 52.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:35 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6LyZgRGK8NehfmI+DhgKKx/KA3DSc1vELOjlIb8yD5g/aoQooepkwEec87nu01uYfaXp8lQyg3aaDUO74J5l0A==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Dannyg"]]
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 149ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5pIFw/L9MAssd7H0iFORQRWF1uJKEvzMi7744X+pQNMxRBhqQp2kHMqVIHNomMDyd+o8YMxTJH49W157IAUqmw==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "Dannyg"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 94ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:18:40 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered puzzles/_bar.html.erb (1.8ms)
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-06 23:18:47 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:18:47 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 95ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HCYdCI0ExNU4tHxbOHCHxFOWkh+jn1oFkqvHKFYvj6jL8AChPWRQwt5W7dzYu9Z3Mfl4nSXegrckTmGyCYPl4A==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Dannyg"]]
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 153ms (Views: 57.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:18:55 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (4.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:18:57 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 68ms (Views: 67.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:18:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+CPInwnqDSbfcYrD4/ZDcYns7aFhK6so/KJMvAcJSnUv9dU2uYqZMTmTG0QDPRLC64MHI+dqc5pKR+omWKUgPQ==", "session"=>{"user_name"=>"Dannyg", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Dannyg"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 92ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:18:59 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered puzzles/_bar.html.erb (1.8ms)
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:19:01 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:19:03 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 69ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:19:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lo7rJb5QjoRJVhROx6vhWwNL4dGWumhi0/ZAeSUP9b1BWPaMDjAak6+0hcknYLDoYSQLUxD7sNBlE+bjeqOf9Q==", "user"=>{"user_name"=>"marsha", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"placecage.com/c/200/200", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_name", "marsha"], ["email", "dzgoldman@wesleyan.edu"], ["password_digest", "$2a$10$.K5rxSLP2T8Q3Rkab9BFcemr7BrsJtqyyk.W7DFd6e4ueApuR3T7y"], ["profile_pic", "placecage.com/c/200/200"], ["created_at", "2015-11-07 04:19:15.096314"], ["updated_at", "2015-11-07 04:19:15.096314"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 100ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:19:15 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-06 23:19:18 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:19:18 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 62ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:19:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gOfqf1Jyl31OBtbZlyTqxdxsZpp73EDSa4AbGYrnZB5XMffW4hIDaqjkR15377t2vgOMGP2dmGDdZb2D1UsOVg==", "session"=>{"user_name"=>"Marsha", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Marsha"]]
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:19:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IMFOCv8451GXU4aaXxUmHrsGYqpMUrG5y2Yl3EK8bhb3F1OjT1hzRnGxFx2/3net2WmIKMoTaQt9g4NGHRAEXg==", "session"=>{"user_name"=>"marsha", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "marsha"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 94ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:19:28 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (1.7ms)
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/puzzles/new" for ::1 at 2015-11-06 23:19:32 -0500
+Processing by PuzzlesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (2.1ms)
+  Rendered puzzles/_grid.html.erb (1.7ms)
+  Rendered puzzles/new.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 162ms (Views: 161.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/puzzles" for ::1 at 2015-11-06 23:19:39 -0500
+Processing by PuzzlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6w7NHgAjrG4Qe6v3URsPE5JFJIj60oG5uxsi6nBuSio82NC3sEM4efaZOnCx0F6g8CrOCnyTWQsN/oRwL8IgYg==", "puzzle"=>{"notes"=>"Marsha Marsha Marsha"}, "commit"=>"Create Puzzle"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (108.1ms)[0m  [1mINSERT INTO "puzzles" ("notes", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notes", "Marsha Marsha Marsha"], ["user_id", 10], ["created_at", "2015-11-07 04:19:39.363199"], ["updated_at", "2015-11-07 04:19:39.363199"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/puzzles/17
+Completed 302 Found in 116ms (ActiveRecord: 110.2ms)
+
+
+Started GET "/puzzles/17" for ::1 at 2015-11-06 23:19:39 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_staticgrid.html.erb (0.9ms)
+  Rendered puzzles/show.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 138ms (Views: 136.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:19:44 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (2.2ms)
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered puzzles/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 75ms (Views: 71.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/puzzles/17" for ::1 at 2015-11-06 23:19:46 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mPuzzle Load (1.4ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (2.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_staticgrid.html.erb (0.0ms)
+  Rendered puzzles/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:20:47 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 250ms (Views: 249.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:20:50 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 203ms (Views: 82.5ms | ActiveRecord: 67.6ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:21:03 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xKOsRDXAf/LV0i/S0Ns/Ud/i2Q+NXxy8gd1NYkTs+4kTdbHthaDr5TMwvlUwEG7ivY0zjQsexA43OOv4G0CRwQ==", "user"=>{"user_name"=>"steve", "email"=>"asdf", "profile_pic"=>"fillmurray.com/g/300/400", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (37.5ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "steve"], ["email", "asdf"], ["password_digest", "$2a$10$hc1vh6FVDGv6tmF99AVX0.UWOCjatkCbyf2g7kisHHUuS3ne86Uzm"], ["profile_pic", "fillmurray.com/g/300/400"], ["created_at", "2015-11-07 04:21:03.347336"], ["updated_at", "2015-11-07 04:21:03.347336"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/login
+Completed 302 Found in 140ms (ActiveRecord: 38.2ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:21:03 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:22:12 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 110ms (Views: 79.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:22:25 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RRvE6YZTLfBk0qxkTj9pKbAcrCKPKMl5Q6JG3xTGXreSzdlANjO554IwPeOu9Dia0nNGoAlpEcv1R+BFS2o0/w==", "user"=>{"user_name"=>"asshole", "email"=>"asdkjfh", "profile_pic"=>"fillmurray.com/g/300/400", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_name", "asshole"], ["email", "asdkjfh"], ["password_digest", "$2a$10$nLc5NC7pX2OnhDOlQiGPUejf/AaOhUvh61ZEc9r7lOTa3NTc8iNgy"], ["profile_pic", "fillmurray.com/g/300/400"], ["created_at", "2015-11-07 04:22:25.598501"], ["updated_at", "2015-11-07 04:22:25.598501"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 96ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/12" for ::1 at 2015-11-06 23:22:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (41.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 12]]
+  Rendered users/show.html.erb within layouts/application (127.7ms)
+Completed 200 OK in 276ms (Views: 230.3ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/users/fillmurray.com/g/300/400" for ::1 at 2015-11-06 23:22:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/fillmurray.com/g/300/400"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.9ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (189.8ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (115.1ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (279.3ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:22:34 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (3.1ms)
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 100ms (Views: 97.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:25:34 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered puzzles/_bar.html.erb (26.9ms)
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  Rendered puzzles/index.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 139ms (Views: 116.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/logout" for ::1 at 2015-11-06 23:25:37 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-06 23:25:37 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-06 23:25:40 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 89ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-06 23:25:55 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rr06utCgBVkGvNrmTo5CrEzxq4HjGV03m5khC55Ac7KRaycTYMCRTuBeS2GuRRMfLp5BA2VYhYUtfIeRwewZ+g==", "user"=>{"user_name"=>"nuts", "email"=>"dzgoldman@wesleyan.edu", "profile_pic"=>"fillmurray.com/g/300/400", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "profile_pic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_name", "nuts"], ["email", "dzgoldman@wesleyan.edu"], ["password_digest", "$2a$10$phLHN9Nr.y7xQKZL5fKqSuxDX3NyzvBP.dWpWNGSTZTuiVnZiAeaK"], ["profile_pic", "fillmurray.com/g/300/400"], ["created_at", "2015-11-07 04:25:55.997542"], ["updated_at", "2015-11-07 04:25:55.997542"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/login
+Completed 302 Found in 95ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:25:56 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-06 23:26:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CxLQdCc1eO80+pZzIGTJuIpHdBFc5VRQxXGp1gXCOhPcxM3dl1Xs+NIYB/TAr5gL6Ciek9qkjOJzlA9MWm5QWw==", "session"=>{"user_name"=>"nuts", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "nuts"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 94ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-11-06 23:26:02 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered puzzles/_bar.html.erb (1.8ms)
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered puzzles/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/puzzles/2" for ::1 at 2015-11-06 23:26:08 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_staticgrid.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for ::1 at 2015-11-06 23:26:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPuzzle Load (0.9ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 93ms (Views: 90.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for ::1 at 2015-11-06 23:26:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/4" for ::1 at 2015-11-06 23:26:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2015-11-06 23:26:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPuzzle Load (0.8ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-11-06 23:26:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPuzzle Load (0.8ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 73ms (Views: 70.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/10" for ::1 at 2015-11-06 23:26:18 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 10]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 73ms (Views: 70.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/placecage.com/c/200/200" for ::1 at 2015-11-06 23:26:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/placecage.com/c/200/200"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (187.3ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (174.1ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/DZack/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (411.4ms)
+
+
+Started GET "/users/1" for ::1 at 2015-11-06 23:26:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 60ms (Views: 58.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2015-11-06 23:26:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPuzzle Load (1.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/2" for ::1 at 2015-11-06 23:26:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles/11" for ::1 at 2015-11-06 23:26:26 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPuzzle Load (0.7ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered puzzles/_bar.html.erb (2.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_staticgrid.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles/new" for ::1 at 2015-11-06 23:27:10 -0500
+Processing by PuzzlesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/new.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 253ms (Views: 252.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-11-06 23:27:13 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 91ms (Views: 90.5ms | ActiveRecord: 0.0ms)

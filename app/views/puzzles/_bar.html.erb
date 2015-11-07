@@ -1,4 +1,5 @@
 <% if logged_in? %>
+<h2> <%= current_user.user_name %></h2>
     <h3><%=link_to "log me out", logout_path %></h3>
   <%else%>
       <h3><%=link_to "Login hur", login_path %></h3>

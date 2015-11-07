@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(user_name: params[:session][:user_name])
-    if user #&& user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to puzzles_path
     else
