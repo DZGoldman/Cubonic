@@ -57,7 +57,7 @@ $(document).ready(function() {
     if (encrypt() == encryptStatic()) {
       console.log("WIN!")
 
-      //crazy shit:
+      $('#win').css("display", "inherit")
 
 
     } else {

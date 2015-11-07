@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
+  # get 'users/index'
+  #
+  # get 'users/new'
+  #
+  # get 'users/show'
 
-  get 'users/new'
 
-  get 'users/show'
-
-  resources :users, :puzzles
   root to: "sessions#new"
   # root to: "puzzles#index"
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
+  get   'login'   => 'sessions#new'
+  post  'login'   => 'sessions#create'
   get 'logout'  => 'sessions#destroy'
+
+  resources :users, :puzzles
+
+    post "/puzzles/:id" => "puzzles#win"
+
 
 
   # get 'comment/create'

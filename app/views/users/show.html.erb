@@ -1,6 +1,7 @@
 <h1><%= @user.user_name%>'s Page</h1>
 <img src="<%=@user.profile_pic %>" alt="" />
 
+<h1><%= @user.user_name%>'s Creatd Puzzles</h1>
 <% @user.puzzles.each do |puzzle| %>
   <li>
     <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
@@ -9,9 +10,20 @@
         <%= link_to "Delete This Puzzle!", puzzle_path(puzzle), method: :delete %> <br>
       <% end %>
     <%end%>
-
-
   </li>
 <% end %>
+
+<h1> Puzzles <%= @user.user_name%> has solved</h1>
+<% @wins.each do |win| %>
+  <% if win.user_id == @user.id %>
+      <li>
+        <%=link_to win.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+      </li>
+    <% end %>
+
+<% end %>
+
+
+
 
 <%= link_to "back to the puzzles", puzzles_path %>

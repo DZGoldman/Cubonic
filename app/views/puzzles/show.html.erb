@@ -4,7 +4,8 @@
 <%# put pattern in a hidden div so javascript can access it %>
   <div id="pattern"><%=@puzzle.pattern %></div>
 
-<div id="win"> <%= link_to "you win! click to record win", puzzles_path  %>
+  <div id="win"> <%= link_to "you win! click to record win", puzzle_path(@puzzle), method: :win  %>
+
 
 
 </div>

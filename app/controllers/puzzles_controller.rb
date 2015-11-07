@@ -26,6 +26,7 @@ class PuzzlesController < ApplicationController
 
   def create
     @puzzle= Puzzle.new puzzle_params
+    
     @puzzle.user_id = current_user.id
     #@puzzle.clicks_created= 3
     @puzzle.save
@@ -34,6 +35,14 @@ class PuzzlesController < ApplicationController
 
   def win
 
+
+      @puzzle= Puzzle.find(params[:id])
+
+      @win= Win.new
+      @win.user_id=current_user.id
+      @win.puzzle_id=@puzzle.id
+      @win.save
+      redirect_to user_path(current_user)
   end
 
   def destroy
