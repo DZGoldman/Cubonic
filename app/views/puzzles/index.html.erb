@@ -1,9 +1,12 @@
-<h1>Puzzle index page</h1>
+<h1>Welcome to Olay</h1>
+<h2>Your New Favorite Open Sourced Logic Puzzle Creator</h2>
 
   <%= render partial: 'bar' %>
+  <p id="new">
   <% if logged_in? %>
-    <%= link_to " make a new Puzzle yo?", new_puzzle_path %>
+    <%= link_to "Create Your Own Puzzle", new_puzzle_path %>
   <% end %>
+  </p>
 
 <ul id="puzzles">
   <% @puzzles.each do |puzzle| %>
@@ -11,8 +14,7 @@
       <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
       <% unless current_user==nil %>
         <%if current_user==puzzle.user || current_user.is_admin %>
-          <%= link_to "Delete This Puzzle!", puzzle_path(puzzle), method: :delete %> <br>
-          <%= link_to "Edit this Puzzle!", edit_puzzle_path(puzzle) %> <br>
+          <%= link_to "---Delete----", puzzle_path(puzzle), method: :delete %> <%= link_to "---Edit---", edit_puzzle_path(puzzle) %> <br>
 
         <% end %>
       <%end%>

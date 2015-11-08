@@ -7,22 +7,23 @@ $(document).ready(function() {
   //(for edit)
   startingClicks=$('#starting_clicks').text()
   clickCounter = +startingClicks;
+
   //for show, grab grid from the hidden div and decrypt it, ie put it on the board
   var encryptedGrid = $('#pattern').text()
   if (encryptedGrid) {
-    decrypt(encryptedGrid,$('.static-box'))
+    decrypt(encryptedGrid, $('#static-board').children().children() )
   }
 
 
   //  edit
   var encryptedGrid = $('#pattern').text()
   if (encryptedGrid) {
-    decrypt(encryptedGrid, $('.edit-box') )
+    decrypt(encryptedGrid, $('#edit-board').children().children() )
   }
 
 
 
-  $('.click-box').on('click', function(e) {
+  $('#click-board, #edit-board, #new-board').children().children().on('click', function(e) {
     console.log('you clicked me bro')
 
 
@@ -35,7 +36,7 @@ $(document).ready(function() {
         var newRow = String(parseInt(row) + rowChange);
         var newCol = String(parseInt(col) + colChange)
 
-        return $(".click-box[row=" + newRow + "][col=" + newCol + "]")[0]
+        return $(".box[row=" + newRow + "][col=" + newCol + "]")[0]
       }
 
       //get the 3x3
@@ -53,10 +54,8 @@ $(document).ready(function() {
         })
 
 
-
-
     //check win
-    if (encrypt() == encryptStatic()) {
+    if (encrypt($('#click-board')) == encrypt( $('#static-board')) ) {
       console.log("WIN!")
 
       $('#win').css("display", "inherit")
@@ -67,7 +66,7 @@ $(document).ready(function() {
     }
 
     //for creat new and edit: after each click, update form with encrypted string and number of clicks
-    var encryptedGrid = encrypt()
+    var encryptedGrid = encrypt( $('#edit-board, #new-board') )
     $('#puzzle_pattern').text(encryptedGrid)
     $('#puzzle_clicks_created').text(clickCounter)
   });

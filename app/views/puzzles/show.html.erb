@@ -1,21 +1,30 @@
-<h1>show a puzzle</h1>   <%= render partial: 'bar' %>
+<h1>show a puzzle</h1>
+<%= render partial: 'bar' %>
 <p><%= @puzzle.notes %></p>
-<p> Made in<%= @puzzle.clicks_created %> clicks </p>
+<p>
+  Made in<%= @puzzle.clicks_created %>
+  clicks
+</p>
 <%# put pattern in a hidden div so javascript can access it %>
-  <div id="pattern"><%=@puzzle.pattern %></div>
+<div id="pattern"><%=@puzzle.pattern %></div>
 
-  <div id="win"> <%= link_to "you win! click to record win", puzzle_path(@puzzle), method: :win  %>
-
-
+<div id="win">
+  <%= link_to "you win! click to record win", puzzle_path(@puzzle), method: :win  %>
 
 </div>
 
 <div id="boards">
-<%= render partial: 'grid' %>
-<%= render partial: 'staticgrid' %>
 
-</div>
+  <div>
+    <div class="board" id="click-board">
+      <%= render partial: 'grid' %>
+    </div>
+    <%= render partial: 'buttons' %>
+  </div>
+  <div class="board" id="static-board">
+    <%= render partial: 'grid' %>
+    <div></div>
 
-<div>
-<%= link_to "back to the puzzles", puzzles_path %>
-</div>
+    <div>
+      <%= link_to "back to the puzzles", puzzles_path %>
+    </div>

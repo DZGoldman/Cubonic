@@ -1,34 +1,34 @@
-<h1>Puzzle#new</h1>   <%= render partial: 'bar' %>
-
-
-
+<h1>Puzzle#new</h1>
+<%= render partial: 'bar' %>
 
 <%= link_to "back to the puzzles", puzzles_path %>
 
-
 <%= form_for(@puzzle) do |f| %>
-  <ul>
+<ul>
   <% @puzzle.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+  <li><%= error %></li>
   <% end %>
-  </ul>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.label :pattern %><br />
-    <%= f.text_area :pattern %>
-  </p>
-  <p>
-    <%= f.label :clicks_created %><br />
-    <%= f.text_area :clicks_created %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+</ul>
+<p>
+  <%= f.label :notes %><br/>
+  <%= f.text_area :notes %>
+</p>
+<p>
+
+  <%= f.text_area :pattern %>
+</p>
+<p>
+
+  <%= f.text_area :clicks_created %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
 <% end %>
 
-
-
-  <%= render partial: 'grid' %>
+<div>
+  <div , class="board" id="new-board">
+    <%= render partial: 'grid' %>
+  </div>
+  <%= render partial: 'buttons' %>
+</div>

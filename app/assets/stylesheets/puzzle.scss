@@ -11,11 +11,8 @@ body {
   height: 40px;
   float: left;
 }
-.row {
-  display: inline-block;
-}
-#click-board,
-#static-board, #edit-board {
+
+.board {
   width: 550px;
   font-size: 0;
   background: black;
@@ -23,7 +20,9 @@ body {
 #static-board {
   float: right;
 }
-
+.row {
+  display: inline-block;
+}
 
 #editboard{
   float: left;
@@ -33,9 +32,10 @@ body {
 }
 
 
-#pattern{
+#pattern, #puzzle_pattern, #puzzle_clicks_created{
   display:none;
 }
+
 .button {
   width: 80px;
   height: 40px;
@@ -50,5 +50,21 @@ body {
 
 #win{
   display: none;
+}
 
+li{
+  font-size: 30px;
+  margin-bottom: 40px
+}
+
+#bar{
+  font-size: 25px;
+  display: inline;
+  position: absolute;
+  top: 20px;
+  right: 20px
+}
+
+#new{
+  font-size: 40px
 }

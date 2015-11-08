@@ -1,7 +1,7 @@
 var color1 = "rgb(255, 255, 255)"
-var color2 = "rgb(173, 216, 230)"
-var color3 = "rgb(0, 0, 255)"
-var color4 = "rgb(0, 0, 0)"
+var color2 = "rgb(23, 241, 208)"
+var color3 = "rgb(232, 23, 23)"
+var color4 = "rgb(11, 191, 31)"
 
 
 var colors = [color1, color2, color3, color4]

@@ -4,7 +4,8 @@ var test="this is a test"
 
 $(document).ready(function() {
   $('#reset').on('click', function() {
-    $('.click-box').css("background-color", color1);
+
+    $('.board').not($('#static-board')).children().children().css("background-color", color1);
     clickCounter = 0;
   });
 
