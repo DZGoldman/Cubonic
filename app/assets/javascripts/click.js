@@ -35,26 +35,24 @@ $(document).ready(function() {
         var newRow = String(parseInt(row) + rowChange);
         var newCol = String(parseInt(col) + colChange)
 
-        return $(".click-box[row=" + newRow + "][col=" + newCol + "]")
+        return $(".click-box[row=" + newRow + "][col=" + newCol + "]")[0]
       }
+
       //get the 3x3
     var threeByThree=[findBox(0, 0), findBox(1, 1), findBox(-1, -1), findBox(1, 0), findBox(0, 1), findBox(1, -1), findBox(-1, 1), findBox(-1, 0), findBox(0, -1)];
 
-      //unless any are empty, update the colors
-      var noneEmpty=
+      //unless any are empty, update the colors...and yes, I am using an error message to help me. Gonna go ahead and assume that this is bad practice...
       threeByThree.forEach(function(box){
-        if(box.length==0){
-          return false
-            }
-            return true
+        box.length
           })
-      if(noneEmpty){
+
+        console.log(clickCounter += 1);
         threeByThree.forEach(function(box){
-          updateColor(box)
-          console.log(clickCounter += 1);
+          updateColor($(box))
+
         })
 
-      }
+
 
 
     //check win
