@@ -50,3 +50,6 @@ $('.box').on('click', function(e){
   updateSomething(-1,0)
   updateSomething(0,-1)
 })
+
+
+  $( "#board" ).toggle( "fold")

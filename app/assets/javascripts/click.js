@@ -24,34 +24,38 @@ $(document).ready(function() {
 
   $('.click-box').on('click', function(e) {
     console.log('you clicked me bro')
-    console.log(clickCounter += 1);
+
 
     var $clickedBox = $(e.target)
 
-    //updates box realtive to inputs
-    var updateSomething = function(rowChange, colChange) {
+    //finds box realtive to inputs- t
+    var findBox = function(rowChange, colChange) {
         var row = ($clickedBox.attr("row"));
         var col = ($clickedBox.attr("col"));
         var newRow = String(parseInt(row) + rowChange);
         var newCol = String(parseInt(col) + colChange)
 
-        var $testBox = $(".click-box[row=" + newRow + "][col=" + newCol + "]")
-        if ($testBox.length != 0) {
-          updateColor($testBox)
-        } else {
-          console.log("nope")
-        }
+        return $(".click-box[row=" + newRow + "][col=" + newCol + "]")
       }
-      //update a 3x3
-    updateSomething(0, 0)
-    updateSomething(1, 1)
-    updateSomething(-1, -1)
-    updateSomething(1, 0)
-    updateSomething(0, 1)
-    updateSomething(1, -1)
-    updateSomething(-1, 1)
-    updateSomething(-1, 0)
-    updateSomething(0, -1)
+      //get the 3x3
+    var threeByThree=[findBox(0, 0), findBox(1, 1), findBox(-1, -1), findBox(1, 0), findBox(0, 1), findBox(1, -1), findBox(-1, 1), findBox(-1, 0), findBox(0, -1)];
+
+      //unless any are empty, update the colors
+      var noneEmpty=
+      threeByThree.forEach(function(box){
+        if(box.length==0){
+          return false
+            }
+            return true
+          })
+      if(noneEmpty){
+        threeByThree.forEach(function(box){
+          updateColor(box)
+          console.log(clickCounter += 1);
+        })
+
+      }
+
 
     //check win
     if (encrypt() == encryptStatic()) {
