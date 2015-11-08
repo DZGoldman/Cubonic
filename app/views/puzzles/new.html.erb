@@ -1,7 +1,7 @@
 <h1>Puzzle#new</h1>
 <%= render partial: 'bar' %>
 
-<%= link_to "back to the puzzles", puzzles_path %>
+
 
 <%= form_for(@puzzle) do |f| %>
 <ul>
@@ -31,4 +31,8 @@
     <%= render partial: 'grid' %>
   </div>
   <%= render partial: 'buttons' %>
+</div>
+
+<div class="home">
+  <%= link_to "back to the puzzles", puzzles_path %>
 </div>

@@ -15,6 +15,7 @@ class PuzzlesController < ApplicationController
     @puzzle= Puzzle.find(params[:id])
     @puzzle.update(puzzle_params)
     @puzzle.user_id=current_user.id
+        flash[:notice] = "You've updated this puzzle. Cool"
     redirect_to puzzle_path(@puzzle)
 
 
@@ -30,6 +31,7 @@ class PuzzlesController < ApplicationController
     @puzzle.user_id = current_user.id
     #@puzzle.clicks_created= 3
     @puzzle.save
+    flash[:notice] = "New Puzzle Created, champ"
     redirect_to puzzle_path(@puzzle)
   end
 
@@ -56,8 +58,8 @@ class PuzzlesController < ApplicationController
        end
      end
     @puzzle.delete
-    flash.now[:notice] = "puzzle deleted"
-
+    flash.now[:success] = "puzzle deleted"
+    
     redirect_to puzzles_path
   end
 

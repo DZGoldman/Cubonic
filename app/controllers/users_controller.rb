@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = "Welcome to my nightmare"
+      flash[:alert] = "Sucess! Log in to start"
       redirect_to login_path
     else
       render new_user_path

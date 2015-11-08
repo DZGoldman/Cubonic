@@ -17,20 +17,31 @@ body {
   font-size: 0;
   background: black;
 }
-#static-board {
-  float: right;
-}
+
 .row {
   display: inline-block;
 }
 
-#editboard{
+#click-board{
   float: left;
 }
 #boards {
+
+  width: 1500px
+}
+#static-board {
   float: left;
 }
 
+#new-board, #edit-board{
+  position: absolute;
+  left: 200px;
+}
+
+#puzzle_notes{
+  background-color: white;
+
+}
 
 #pattern, #puzzle_pattern, #puzzle_clicks_created{
   display:none;
@@ -45,7 +56,9 @@ body {
   font-size: 20px;
 }
 #buttons {
-  display: inline;
+  position: absolute;
+  bottom: 80px;
+  float: left;
 }
 
 #win{
@@ -58,6 +71,7 @@ li{
   border: 5px solid blue;
   border-style: groove;
   padding: 10px;
+  width: auto;
 }
 
 #bar{
@@ -70,4 +84,18 @@ li{
 
 #new{
   font-size: 40px
+}
+
+.home{
+  font-size: 25px;
+  position: absolute;
+  bottom: 40px;
+  left: 20px
+}
+
+input, #win{
+  font-size: 30px;
+  background-color: rgb(172, 221, 185);
+  width: auto;
+  height: 75x;
 }

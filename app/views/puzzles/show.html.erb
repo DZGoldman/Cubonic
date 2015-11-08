@@ -1,5 +1,11 @@
 <h1>show a puzzle</h1>
 <%= render partial: 'bar' %>
+
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
+<% end %>
+
+
 <p><%= @puzzle.notes %></p>
 <p>
   Made in<%= @puzzle.clicks_created %>
@@ -23,8 +29,9 @@
   </div>
   <div class="board" id="static-board">
     <%= render partial: 'grid' %>
-    <div></div>
+  </div>
+</div>
 
-    <div>
-      <%= link_to "back to the puzzles", puzzles_path %>
-    </div>
+<div class="home">
+  <%= link_to "back to the puzzles", puzzles_path %>
+</div>

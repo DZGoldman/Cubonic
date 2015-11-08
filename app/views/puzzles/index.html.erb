@@ -1,6 +1,10 @@
 <h1>Welcome to Olay</h1>
 <h2>Your New Favorite Open Sourced Logic Puzzle Creator</h2>
 
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
+<% end %>
+
   <%= render partial: 'bar' %>
   <p id="new">
   <% if logged_in? %>
@@ -9,13 +13,12 @@
   </p>
 
 <ul id="puzzles">
-  <% @puzzles.each do |puzzle| %>
+  <% @puzzles.reverse.each do |puzzle| %>
     <li>
       <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
       <% unless current_user==nil %>
         <%if current_user==puzzle.user || current_user.is_admin %>
           <%= link_to "---Delete----", puzzle_path(puzzle), method: :delete %> <%= link_to "---Edit---", edit_puzzle_path(puzzle) %> <br>
-
         <% end %>
       <%end%>
 
