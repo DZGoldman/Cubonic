@@ -26,7 +26,7 @@ class PuzzlesController < ApplicationController
 
   def create
     @puzzle= Puzzle.new puzzle_params
-    
+
     @puzzle.user_id = current_user.id
     #@puzzle.clicks_created= 3
     @puzzle.save
@@ -47,6 +47,14 @@ class PuzzlesController < ApplicationController
 
   def destroy
     @puzzle=Puzzle.find(params[:id])
+    #these next two lines are horseshit
+
+     @win=Win.where(puzzle_id: @puzzle.id)
+     unless @win==[]
+       @win.each do |win|
+         Win.delete(win.id)
+       end
+     end
     @puzzle.delete
     flash.now[:notice] = "puzzle deleted"
 

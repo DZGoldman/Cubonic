@@ -16,8 +16,9 @@
 <h1> Puzzles <%= @user.user_name%> has solved</h1>
 <% @wins.each do |win| %>
   <% if win.user_id == @user.id %>
+      <% @puzzle=Puzzle.find(win.puzzle_id) %>
       <li>
-        <%=link_to win.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+        <%=link_to @puzzle.notes, puzzle_path(@puzzle) %> <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %>
       </li>
     <% end %>
 
