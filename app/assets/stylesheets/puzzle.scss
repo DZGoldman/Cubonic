@@ -66,7 +66,7 @@ body {
   display:none;
 }
 
-.button {
+.button, #win {
   background: #f0da1a;
       color: rgb(73, 83, 11);
       font-family: Sans-serif;
@@ -80,7 +80,12 @@ body {
       transition: all 0.2s ease 0s;
 }
 
-.button:hover {
+#win{
+  width: 300px;
+  color: rgb(73, 83, 11);
+  border-radius: 20px;
+}
+.button:hover{
   background: #b4c11f;
 }
 
@@ -138,7 +143,7 @@ li{
   right: 20px
 }
 
-input, #win, #puzzle_notes{
+input, #puzzle_notes{
   font-size: 25px;
   background-color: rgb(172, 221, 185);
   width: auto;
@@ -162,6 +167,10 @@ input, #win, #puzzle_notes{
 }
 
 #starting_clicks{
-  font-size: 20px
+  font-size: 20px;
 
+}
+
+.notes{
+  font-size: 25px;
 }
