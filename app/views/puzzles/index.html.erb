@@ -1,5 +1,5 @@
 <h1 class="page_header"> Welcome to Olay</h1>
-<h2 id="sub">Your New Favorite User Generated Logic Puzzle Platformr</h2>
+<h2 id="sub_title">Your New Favorite User Generated Logic Puzzle Platformer</h2>
 
 
 
@@ -11,7 +11,7 @@
 <% end %>
 
 <%= render partial: 'bar' %>
-<p id="new">
+<p id="new_puzzle_button">
   <% if logged_in? %>
   <%= link_to "Create Your Own Puzzle", new_puzzle_path %>
   <% end %>
@@ -19,7 +19,6 @@
 
 <ul id="puzzles">
   <% @puzzles.reverse.each_with_index do |puzzle, index| %>
-
 
 
 <%# render a mini board with unique id %>
@@ -38,7 +37,6 @@
       var board= $('#mini_board'+index).children().children()
       decrypt( encryptedGrid, board)
     </script>
-
 
 
 

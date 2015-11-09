@@ -36,10 +36,8 @@ class PuzzlesController < ApplicationController
   end
 
   def win
-
-
+    # From a custom path: generates new Win object, gives it appropriate puzzle and user id
       @puzzle= Puzzle.find(params[:id])
-
       @win= Win.new
       @win.user_id=current_user.id
       @win.puzzle_id=@puzzle.id
@@ -49,8 +47,6 @@ class PuzzlesController < ApplicationController
 
   def destroy
     @puzzle=Puzzle.find(params[:id])
-    #these next two lines are horseshit
-
      @win=Win.where(puzzle_id: @puzzle.id)
      unless @win==[]
        @win.each do |win|

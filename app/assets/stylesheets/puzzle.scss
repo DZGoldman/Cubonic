@@ -19,7 +19,6 @@ body {
   height: 40px;
   float: left;
 }
-
 .mini_board {
   width: 240px;
 }
@@ -29,12 +28,13 @@ body {
   height: 20px;
   float: left;
 }
+
 // click_board is the board you click when trying to solve a puzzle
 #click_board,
 #static_board {
   float: left;
 }
-#boards {
+#show_page_boards {
   width: 1250px;
   display: inline-block;
 }
@@ -46,14 +46,7 @@ body {
 #puzzle_notes {
   background-color: white;
 }
-#pattern,
-#puzzle_pattern,
-#puzzle_clicks_created,
-.hidden {
-  display: none;
-}
-.button,
-#win {
+.button {
   background: #f0da1a;
   color: rgb(73, 83, 11);
   font-family: Sans-serif;
@@ -66,53 +59,44 @@ body {
   border: 0;
   transition: all 0.2s ease 0s;
 }
+.button:hover {
+  background: #b4c11f;
+}
 #win {
   width: 300px;
   color: rgb(73, 83, 11);
   border-radius: 20px;
-}
-.button:hover {
-  background: #b4c11f;
+  display: none;
 }
 #reset,
 #toggle_grid {
   float: left;
   margin: 10px;
 }
-
-// #buttons {
-//   position: absolute;
-//   top: 650px;
-//
-// }
 #directions {
   padding: 5px;
   font-style: oblique;
   font-size: 20px;
 }
-#win {
-  display: none;
-}
 li {
+  background-color: rgb(7, 7, 43);
   font-size: 25px;
   margin: 20px;
   border: 5px solid blue;
   border-style: groove;
+  border-radius: 15px;
   padding: 15px;
   width: 270px;
   height: 280px;
   display: inline-block;
   overflow: hidden;
 }
-#bar {
+#status_bar {
   font-size: 25px;
   display: inline;
   position: absolute;
   top: 20px;
   right: 20px;
-}
-#new {
-  font-size: 40px;
 }
 .home {
   font-size: 25px;
@@ -131,18 +115,27 @@ input,
   color: red;
 }
 .page_header,
-#sub {
+#sub_title {
   margin: 30px;
 }
-#sub {
+#sub_title {
   font-style: italic;
 }
-#new {
+#new_puzzle_button {
   margin: 30px;
+  font-size: 40px;
 }
 #starting_clicks {
   font-size: 20px;
 }
 .notes {
   font-size: 25px;
+}
+
+// hidden divs
+#pattern,
+#puzzle_pattern,
+#puzzle_clicks_created,
+.hidden {
+  display: none;
 }

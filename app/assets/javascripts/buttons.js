@@ -1,7 +1,6 @@
 var test="this is a test"
 
-//clear board
-
+//clear board- clears whatever board is currently on the page, long as it isn't static
 $(document).ready(function() {
   $('#reset').on('click', function() {
 
@@ -9,7 +8,7 @@ $(document).ready(function() {
     clickCounter = 0;
   });
 
-  //toggle grid on and off
+  //toggle grid on and off for all boards on the page
   var border = false;
   $('#toggle_grid').on('click', function() {
     if (border == false) {

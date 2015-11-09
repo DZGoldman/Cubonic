@@ -1,3 +1,4 @@
+//The 5 colors- these are adjustable here so long as color1 == background-color
 var color1 = "rgb(255, 255, 255)"
 var color2 = "rgb(23, 241, 208)"
 var color3 = "rgb(232, 23, 23)"
@@ -7,6 +8,7 @@ var color5 = "rgb(249, 132, 11)"
 
 var colors = [color1, color2, color3, color4, color5]
 
+//bump up color, reset after color 5. To be invoked on clicked
 var updateColor = function(box) {
   var currentColor = box.css("background-color")
   switch (currentColor) {
@@ -22,16 +24,8 @@ var updateColor = function(box) {
     case color4:
       box.css("background-color", color5)
       break
-
     case color5:
       box.css("background-color", color1)
       break
   }
 };
-
-//
-// $.ajax({
-//         url : "/puzzles/new",
-//         type : "post",
-//         data : { color1: JSON.(color1) }
-//     );

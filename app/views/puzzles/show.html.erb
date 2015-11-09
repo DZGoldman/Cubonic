@@ -8,19 +8,19 @@
 <% unless @puzzle.notes=="" %>
   <p class="notes"> Notes: "<%= @puzzle.notes %>"</p>
 <%end %>
+
 <p class="notes">
-  This puzzle was created with <%= @puzzle.clicks_created %>
-  clicks
+  This puzzle was created with <%= @puzzle.clicks_created %> clicks
 </p>
 <%# put pattern in a hidden div so javascript can access it %>
 <div id="pattern"><%=@puzzle.pattern %></div>
 
-<div id="win">
+<div id="win" class="button">
   <%= link_to "Solved! Click to record your win", puzzle_path(@puzzle), method: :win  %>
 
 </div>
 
-<div id="boards">
+<div id="show_page_boards">
 
   <div>
       <div class="board" id="click_board">
