@@ -9,9 +9,9 @@
   <% end %>
 </ul>
 <p>
-  <%= f.label :notes %> (optional)<br/>
-  <%= f.text_area :notes %>
-  <%= f.submit %>
+  <%= f.label :notes %> (optional)<br><br>
+  <%= f.text_area :notes %><br><br>
+  <%= f.submit %><br><br>
 </p>
 <p>
   <%= f.text_area :pattern %>
@@ -32,6 +32,4 @@
   </div>
 </div>
 
-<div class="home">
-  <%= link_to "back to the puzzles", puzzles_path %>
-</div>
+<%= render partial: 'home' %>

@@ -33,6 +33,11 @@
         <%= render partial: 'buttons' %>
 </div>
 
-<div class="home">
-  <%= link_to "back to the puzzles", puzzles_path %>
-</div>
+<p id="directions">
+  Directions: <br><br>
+  Try to create the image on the right on the board on the left. <br><br>
+  Each click colors in a 3x3 box. <br><br>
+  Overlapping changes colors.
+</p>
+
+<%= render partial: 'home' %>

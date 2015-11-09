@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(user_name: params[:session][:user_name])
     if user && user.authenticate(params[:session][:password])
       log_in user
-      flash[:notice] = "Successfully Loggin in. Olay Olay."
+      flash[:notice] = "Successfully logged in. Olay Olay."
       redirect_to puzzles_path
 
     else
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-        flash[:notice] = "Loggin out. Olay Olay."
+        flash[:notice] = "Logged out. Olay Olay."
     redirect_to root_path
   end
 end

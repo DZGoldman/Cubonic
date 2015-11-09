@@ -2,8 +2,6 @@
 <%= render partial: 'bar' %>
 
 <div id="pattern"><%=@puzzle.pattern %></div>
-<div id="starting_clicks"> Created in<%= @puzzle.clicks_created %> clicks
-</div>
 
 <%= form_for(@puzzle) do |f| %>
 <ul>
@@ -32,6 +30,4 @@
   </div>
   <%= render partial: 'buttons' %>
 </div>
-<div class="home">
-  <%= link_to "back to the puzzles", puzzles_path %>
-</div>
+<%= render partial: 'home' %>

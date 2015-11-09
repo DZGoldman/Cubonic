@@ -4,6 +4,7 @@
 body {
   background-color: black;
   color: white;
+
 }
 
 .board {
@@ -44,7 +45,7 @@ body {
 }
 #boards {
 
-  width: 1200px;
+  width: 1250px;
   display:inline-block;
 }
 
@@ -93,7 +94,12 @@ body {
 //
 // }
 
+#directions{
 
+  padding: 5px;
+  font-style: oblique;
+  font-size: 20px;
+}
 
 #win{
   display: none;
@@ -107,8 +113,9 @@ li{
   border-style: groove;
   padding: 15px;
   width: 270px;
-  height: 270px;
+  height: 280px;
   display: inline-block;
+  overflow: hidden;
 }
 
 
@@ -132,12 +139,29 @@ li{
 }
 
 input, #win, #puzzle_notes{
-  font-size: 30px;
+  font-size: 25px;
   background-color: rgb(172, 221, 185);
   width: auto;
-  height: 75px;
+  height: 35px;
 }
 
 .alert{
   color: red;
+}
+
+.page_header, #sub{
+  margin: 30px
+}
+
+#sub{
+  font-style: italic;
+}
+
+#new{
+  margin: 30px;
+}
+
+#starting_clicks{
+  font-size: 20px
+
 }
