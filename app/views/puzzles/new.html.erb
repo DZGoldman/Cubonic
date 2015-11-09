@@ -9,27 +9,27 @@
   <% end %>
 </ul>
 <p>
-  <%= f.label :notes %><br/>
+  <%= f.label :notes %> (optional)<br/>
   <%= f.text_area :notes %>
+  <%= f.submit %>
 </p>
 <p>
-
   <%= f.text_area :pattern %>
 </p>
 <p>
-
   <%= f.text_area :clicks_created %>
 </p>
-<p>
-  <%= f.submit %>
-</p>
+
 <% end %>
 
 <div>
-  <div , class="board" id="new-board">
+
+  <div>
+    <div  class="board" id="new-board">
     <%= render partial: 'grid' %>
+    </div>
+    <%= render partial: 'buttons' %>
   </div>
-  <%= render partial: 'buttons' %>
 </div>
 
 <div class="home">

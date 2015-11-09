@@ -9,7 +9,7 @@
 
     <div id="mini-board<%=index%>" class="board mini_board">
       <%# this next line is the only diffrence between index page %>
-      <%= render partial: 'minigrid' %>
+      <%= render partial: './puzzles/minigrid' %>
     </div>
     <%# fetch encrypted string to feed to encrypt function %>
     <div id="mini_encrypt<%=index%>" class="hidden"><%= puzzle.pattern%></div>
@@ -24,11 +24,11 @@
     </script>
 
 
-    
-    <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+
+    <%=link_to "Play me!", puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
     <% unless current_user==nil %>
       <%if current_user==@user || current_user.is_admin %>
-        <%= link_to "Delete This Puzzle!", puzzle_path(puzzle), method: :delete %> <br>
+        <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>   <%= link_to "Edit", edit_puzzle_path(puzzle) %>
       <% end %>
     <%end%>
   </li>
