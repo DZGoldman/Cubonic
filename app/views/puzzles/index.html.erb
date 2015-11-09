@@ -1,27 +1,61 @@
 <h1>Welcome to Olay</h1>
 <h2>Your New Favorite Open Sourced Logic Puzzle Creator</h2>
 
+
+
+
 <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
+<div class="alert alert-<%= message_type %>">
+  <h1><%= message %></h1>
+</div>
 <% end %>
 
-  <%= render partial: 'bar' %>
-  <p id="new">
+<%= render partial: 'bar' %>
+<p id="new">
   <% if logged_in? %>
-    <%= link_to "Create Your Own Puzzle", new_puzzle_path %>
+  <%= link_to "Create Your Own Puzzle", new_puzzle_path %>
   <% end %>
-  </p>
+</p>
 
 <ul id="puzzles">
-  <% @puzzles.reverse.each do |puzzle| %>
-    <li>
-      <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
-      <% unless current_user==nil %>
-        <%if current_user==puzzle.user || current_user.is_admin %>
-          <%= link_to "---Delete----", puzzle_path(puzzle), method: :delete %> <%= link_to "---Edit---", edit_puzzle_path(puzzle) %> <br>
-        <% end %>
-      <%end%>
+  <% @puzzles.reverse.each_with_index do |puzzle, index| %>
 
-    </li>
+
+
+<%# render a mini board with unique id %>
+  <li>
+    <div id="mini-board<%=index%>" class="board mini_board">
+      <%= render partial: 'minigrid' %>
+    </div>
+    <%# fetch encrypted string to feed to encrypt function %>
+    <div id="mini_encrypt<%=index%>" class="hidden"><%= puzzle.pattern%></div>
+
+    <%# decrypt, put onto each mini board %>
+    <script>
+    // = require jquery
+      var index= <%=index%>;
+      var encryptedGrid = $('#mini_encrypt'+index).text();
+      var board= $('#mini-board'+index).children().children()
+      decrypt( encryptedGrid, board)
+    </script>
+
+
+
+
+
+    <%=link_to puzzle.notes, puzzle_path(puzzle) %>
+    <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+
+
+
+    <% unless current_user==nil %>
+    <%if current_user==puzzle.user || current_user.is_admin %>
+    <%= link_to "---Delete----", puzzle_path(puzzle), method: :delete %>
+    <%= link_to "---Edit---", edit_puzzle_path(puzzle) %>
+    <br>
+    <% end %>
+    <%end%>
+
+  </li>
   <% end %>
 </ul>
