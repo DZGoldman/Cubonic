@@ -2,8 +2,29 @@
 <img src="<%=@user.profile_pic %>" alt="" />
 
 <h1><%= @user.user_name%>'s Creatd Puzzles</h1>
-<% @user.puzzles.each do |puzzle| %>
+<% @user.puzzles.each_with_index do |puzzle, index| %>
   <li>
+
+
+
+    <div id="mini-board<%=index%>" class="board mini_board">
+      <%# this next line is the only diffrence between index page %>
+      <%= render partial: 'minigrid' %>
+    </div>
+    <%# fetch encrypted string to feed to encrypt function %>
+    <div id="mini_encrypt<%=index%>" class="hidden"><%= puzzle.pattern%></div>
+
+    <%# decrypt, put onto each mini board %>
+    <script>
+    // = require jquery
+      var index= <%=index%>;
+      var encryptedGrid = $('#mini_encrypt'+index).text();
+      var board= $('#mini-board'+index).children().children()
+      decrypt( encryptedGrid, board)
+    </script>
+
+
+    
     <%=link_to puzzle.notes, puzzle_path(puzzle) %> <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
     <% unless current_user==nil %>
       <%if current_user==@user || current_user.is_admin %>

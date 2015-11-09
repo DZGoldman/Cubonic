@@ -42,19 +42,20 @@
 
 
 
-
-    <%=link_to puzzle.notes, puzzle_path(puzzle) %>
+    <div class="links">
+    <%=link_to "Play Me!", puzzle_path(puzzle) %>
     <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
 
 
 
     <% unless current_user==nil %>
     <%if current_user==puzzle.user || current_user.is_admin %>
-    <%= link_to "---Delete----", puzzle_path(puzzle), method: :delete %>
+    <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>
     <%= link_to "---Edit---", edit_puzzle_path(puzzle) %>
     <br>
     <% end %>
     <%end%>
+</div>
 
   </li>
   <% end %>

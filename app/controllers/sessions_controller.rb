@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
     user = User.find_by(user_name: params[:session][:user_name])
     if user && user.authenticate(params[:session][:password])
       log_in user
+      flash[:notice] = "Successfully Loggin in. Olay Olay."
       redirect_to puzzles_path
+
     else
       flash.now[:danger] = "Invalid email/password combination"
       render 'new'
@@ -19,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-        flash[:notice] = "Peace"
+        flash[:notice] = "Loggin out. Olay Olay."
     redirect_to root_path
   end
 end
