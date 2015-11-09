@@ -1,3 +1,13 @@
+Olay is a logic puzzle CRUD up created in Rails. It is currently hosted on a heroku server.
+Users can create, edit, and delete Puzzles, and play puzzles other users created.
+
+Models:
+Users- A user is created at a sign up page, and the users session is tracked until the user logs out. Each user has their own profile page, where their created puzzles and solved puzzles are displayed.
+
+Puzzles- The actual grid pattern of the puzzle is stored as a string; the puzzles on the board, when created, are encrypted using jquery, and later, when the puzzle is called, decrypted and put on the board. Puzzles also store the number of clicks that were used in their creation.
+
+Wins- Join table of Puzzles and Users, stores each instance of a "Win," which are displayed on the users profile page.
+
 == README
 
 This README would normally document whatever steps are necessary to get the
