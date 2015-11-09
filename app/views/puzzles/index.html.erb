@@ -24,7 +24,7 @@
 
 <%# render a mini board with unique id %>
   <li>
-    <div id="mini-board<%=index%>" class="board mini_board">
+    <div id="mini_board<%=index%>" class="board mini_board">
       <%= render partial: 'minigrid' %>
     </div>
     <%# fetch encrypted string to feed to encrypt function %>
@@ -35,7 +35,7 @@
     // = require jquery
       var index= <%=index%>;
       var encryptedGrid = $('#mini_encrypt'+index).text();
-      var board= $('#mini-board'+index).children().children()
+      var board= $('#mini_board'+index).children().children()
       decrypt( encryptedGrid, board)
     </script>
 

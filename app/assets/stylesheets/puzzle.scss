@@ -23,23 +23,23 @@ body {
 .mini_board {
   width: 240px;
 }
-.mini-box {
-  background-color: white;
+.mini_box {
+  background_color: white;
   width: 20px;
   height: 20px;
   float: left;
 }
 // click_board is the board you click when trying to solve a puzzle
-#click-board,
-#static-board {
+#click_board,
+#static_board {
   float: left;
 }
 #boards {
   width: 1250px;
   display: inline-block;
 }
-#new-board,
-#edit-board {
+#new_board,
+#edit_board {
   position: relative;
   left: 10px;
 }
