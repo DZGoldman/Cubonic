@@ -1,31 +1,42 @@
 //The 5 colors- these are adjustable here so long as color1 == background-color
-var color1 = "rgb(255, 255, 255)"
-var color2 = "rgb(23, 241, 208)"
-var color3 = "rgb(232, 23, 23)"
-var color4 = "rgb(11, 191, 31)"
-var color5 = "rgb(249, 132, 11)"
+var side1 = 'show-front'
+var side2 = 'show-back'
+var side3 = 'show-right'
+var side4 = 'show-left'
+var side5 = 'show-top'
+var side6 = 'show-bottom'
 
 
-var colors = [color1, color2, color3, color4, color5]
+var sides = [side1, side2, side3, side4, side5, side6]
 
 //bump up color, reset after color 5. To be invoked on clicked
-var updateColor = function(box) {
-  var currentColor = box.css("background-color")
-  switch (currentColor) {
-    case color1:
-      box.css("background-color", color2)
+var rotateCube = function(cube) {
+  var currentSide = cube.attr('class')
+  // if (!currentSide) {
+  //     currentSide = side1;
+  // }
+
+  console.log(currentSide);
+  //get rid of current side status
+  cube.removeClass();
+  switch (currentSide) {
+    case side1:
+      cube.addClass(side2)
       break;
-    case color2:
-      box.css("background-color", color3)
+    case side2:
+      cube.addClass(side3)
       break
-    case color3:
-      box.css("background-color", color4)
+    case side3:
+      cube.addClass(side4)
       break
-    case color4:
-      box.css("background-color", color5)
+    case side4:
+      cube.addClass(side5)
       break
-    case color5:
-      box.css("background-color", color1)
+    case side5:
+      cube.addClass(side6)
+      break
+      case side6:
+      cube.addClass(side1)
       break
   }
 };

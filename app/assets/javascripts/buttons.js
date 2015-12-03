@@ -4,11 +4,13 @@ var test="this is a test"
 $(document).ready(function() {
   $('#reset').on('click', function() {
 
-    $('.board').not($('#static_board')).children().children().css("background-color", color1);
-    clickCounter = 0;
+    cubes=$('.board').not($('#static_board')).children().children().children();
+      cubes.removeClass();
+      cubes.attr("class", side1);
+      clickCounter = 0;
   });
 
-  //toggle grid on and off for all boards on the page
+  // TODO toggle grid on and off for all boards on the page
   var border = false;
   $('#toggle_grid').on('click', function() {
     if (border == false) {
