@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get 'users/show'
 
 
-  root to: "sessions#new"
+  root to: "puzzles#levels"
   # root to: "puzzles#index"
   get   'login'   => 'sessions#new'
   post  'login'   => 'sessions#create'
@@ -16,7 +16,15 @@ Rails.application.routes.draw do
   resources :users, :puzzles
 
     post "/puzzles/:id" => "puzzles#win"
+    get "/puzzles/levels" => "puzzles#levels"
 
+    # get "/posts" => "posts#index"
+    # get "/posts/:id" => "posts#show"
+    # get "/posts/new" => "posts#new"
+    # post "/posts" => "posts#create"  # usually a submitted form
+    # get "/posts/:id/edit" => "posts#edit"
+    # put "/posts/:id" => "posts#update" # usually a submitted form
+    # delete "/posts/:id" => "posts#destroy"
 
 
   # get 'comment/create'

@@ -1,4 +1,8 @@
 class PuzzlesController < ApplicationController
+
+  def levels
+      @puzzles= Puzzle.all
+  end
   def index
     @puzzles= Puzzle.all
   end
