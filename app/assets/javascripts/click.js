@@ -19,7 +19,7 @@ $(document).ready(function() {
     decrypt(encryptedGrid, $('#edit_board'))
   }
 
-$('.box').click(function(e) {
+$('#click_board, #edit_board, #new_board').children().children().children().click(function(e) {
 
 console.log('you clicked me bro')
 var clickedBox = (e.target)
