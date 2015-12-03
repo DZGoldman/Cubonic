@@ -42534,3 +42534,2353 @@ Processing by PuzzlesController#index as HTML
   Rendered puzzles/index.html.erb within layouts/application (5.2ms)
 Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.7ms)
 >>>>>>> new_route
+
+
+Started GET "/" for ::1 at 2015-12-03 13:40:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (65.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PuzzlesController#levels as HTML
+  [1m[35mUser Load (33.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (295.2ms)
+  [1m[36mPuzzle Load (12.7ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/levels.html.erb within layouts/application (425.9ms)
+Completed 200 OK in 1367ms (Views: 1120.7ms | ActiveRecord: 185.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-03 13:40:28 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-03 13:40:28 -0500
+Processing by PuzzlesController#levels as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (4.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_minigrid.html.erb (2.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/levels.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 198ms (Views: 196.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 13:40:30 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 198ms (Views: 198.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-12-03 13:40:34 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (106.8ms)
+Completed 200 OK in 244ms (Views: 243.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-03 13:40:42 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VKsHlKTJYLLmI/+Xm9pAHw3cg6phjOqZ+SRa1Pic5GmDfRo9FKn0pQDBbhB7ERGsb7NpKOfNMitPwfxOpzCOIQ==", "user"=>{"user_name"=>"Cats", "email"=>"DZack", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (31.0ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "Cats"], ["email", "DZack"], ["password_digest", "$2a$10$c1m.pWr4MepIm6g5gu6Sceg51tk4TPhrkAsipBb1WroZDfutxpeva"], ["created_at", "2015-12-03 18:40:42.951954"], ["updated_at", "2015-12-03 18:40:42.951954"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/login
+Completed 302 Found in 133ms (ActiveRecord: 32.3ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 13:40:42 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 79ms (Views: 78.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-12-03 13:40:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N1zYHcpLxDaeJCnWhPt2jVum8bBPy+Or/Bhb41nXZs/C27Jx0m7BzyaASC62LxpVwFxREd+9zwZFcf10ss30w==", "session"=>{"user_name"=>"Cats", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (52.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "Cats"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 145ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-12-03 13:40:48 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  [1m[36mPuzzle Load (0.5ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 120ms (Views: 118.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 13:41:00 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (17.6ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (1.8ms)
+  Rendered puzzles/_grid.html.erb (2.8ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.5ms)
+  Rendered puzzles/_home.html.erb (0.9ms)
+  Rendered puzzles/show.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 184ms (Views: 163.4ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-03 13:42:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PuzzlesController#levels as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (55.2ms)
+  [1m[36mPuzzle Load (0.7ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/levels.html.erb within layouts/application (103.4ms)
+Completed 200 OK in 447ms (Views: 398.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-03 13:42:13 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-03 13:42:13 -0500
+Processing by PuzzlesController#levels as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_bar.html.erb (2.4ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mPuzzle Load (0.5ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered puzzles/levels.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 148ms (Views: 111.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-12-03 13:42:17 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 137ms (Views: 136.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-03 13:42:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q1tYqJfzwnIau1Q+lVjevqqN95EhBjUaS0tD9y1q8FuUjUUBJ5NWZfxZxbl1k48NyOIdE6dH7aj9ruVtcsaaEw==", "user"=>{"user_name"=>"Dogs", "email"=>"dannyg9917@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("user_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "Dogs"], ["email", "dannyg9917@gmail.com"], ["password_digest", "$2a$10$FDuutlf.IbBJd0fexq5Yvu6uabT37u6D9asa1P47z6DitQITUC/cW"], ["created_at", "2015-12-03 18:42:27.569839"], ["updated_at", "2015-12-03 18:42:27.569839"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/login
+Completed 302 Found in 127ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 13:42:27 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 136ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-12-03 13:42:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S/z90mqJtOKiRSTpN9WFJmY7Owb3RF6jsbXBD0CH5rucKuB72ukg9USntW7XHtSVBFTRhHEFhhEHUGeVHyuM8w==", "session"=>{"user_name"=>"Dogs", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "Dogs"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 99ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-12-03 13:42:30 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.1ms)
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 112ms (Views: 111.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 13:42:35 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 97ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 13:42:54 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 87ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-12-03 15:44:51 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 344ms (Views: 336.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-03 15:45:02 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"40umoAXg1p6LmWqezN+19crTuc1uxSNTMsktYT50wKY0nbsJtYBCiW17+xksFORGqLxTT+iE++GELIv7Ydiq7g==", "user"=>{"user_name"=>"alsfdj", "email"=>"dannyg9917@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("user_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_name", "alsfdj"], ["email", "dannyg9917@gmail.com"], ["password_digest", "$2a$10$amsgBY8p9ABtrO5Ermnby.HqUYzObqe72emCd3Sd6FOJNH7H6vylq"], ["created_at", "2015-12-03 20:45:02.647563"], ["updated_at", "2015-12-03 20:45:02.647563"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 156ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 15:45:02 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 128ms (Views: 127.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-12-03 15:48:30 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 211ms (Views: 211.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:48:30 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:48:31 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:48:31 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:48:31 -0500
+
+
+Started POST "/login" for ::1 at 2015-12-03 15:48:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"84VaZpczp17NuIyojcl5hSKyluB9TwlQiYPsD0Rt3HEkU0fPJ1MzSStaHS9tAig2QN18YvsO0eI/ZkqVG8G2OQ==", "session"=>{"user_name"=>"Dogs", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "Dogs"]]
+Redirected to http://localhost:3000/puzzles
+Completed 302 Found in 97ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-12-03 15:48:31 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.8ms)
+  [1m[35mPuzzle Load (0.6ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  Rendered puzzles/_minigrid.html.erb (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 287ms (Views: 285.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:48:33 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (43.8ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (2.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.6ms)
+  Rendered puzzles/_home.html.erb (2.0ms)
+  Rendered puzzles/show.html.erb within layouts/application (68.4ms)
+Completed 200 OK in 246ms (Views: 197.6ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:49:04 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (2.5ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.3ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 643ms (Views: 639.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/boards.self-5fdf58b8d0d77be784d19c99e65e8eb6f81b1bb9525299576dcf857a7387ad9c.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:49:05 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:50:21 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.2ms)
+  Rendered puzzles/_buttons.html.erb (0.2ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 408ms (Views: 405.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/boards.self-69306edc87067bf53ba574ef42b43e953981a9f305488b136a79f8b92dfcad3f.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:50:22 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:50:28 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 119ms (Views: 116.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/boards.self-69306edc87067bf53ba574ef42b43e953981a9f305488b136a79f8b92dfcad3f.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:28 -0500
+
+
+Started GET "/puzzles/7" for 127.0.0.1 at 2015-12-03 15:50:35 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.4ms)
+  Rendered puzzles/_grid.html.erb (0.6ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 190ms (Views: 187.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/boards.self-69306edc87067bf53ba574ef42b43e953981a9f305488b136a79f8b92dfcad3f.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:35 -0500
+
+
+Started GET "/puzzles/7" for 127.0.0.1 at 2015-12-03 15:50:47 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.2ms)
+  Rendered puzzles/_grid.html.erb (0.2ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 133ms (Views: 131.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/boards.self-5fdf58b8d0d77be784d19c99e65e8eb6f81b1bb9525299576dcf857a7387ad9c.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:50:47 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:50:49 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (2.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 203ms (Views: 199.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/boards.self-5fdf58b8d0d77be784d19c99e65e8eb6f81b1bb9525299576dcf857a7387ad9c.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:50:49 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:50:51 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (9.3ms)
+  Rendered puzzles/_grid.html.erb (2.2ms)
+  Rendered puzzles/_grid.html.erb (0.3ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 239ms (Views: 236.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/boards.self-5fdf58b8d0d77be784d19c99e65e8eb6f81b1bb9525299576dcf857a7387ad9c.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for 127.0.0.1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:50:52 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:51:15 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 246ms (Views: 244.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for 127.0.0.1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for 127.0.0.1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for 127.0.0.1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/assets/boards.self-a9e0deb83559cc29ff82d72356e64a1fcb3cc5a46c3af106b52cf8cce95dc861.css?body=1" for ::1 at 2015-12-03 15:51:15 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:51:33 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.2ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 179ms (Views: 177.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for 127.0.0.1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/boards.self-8687c60e33c850c21ea66f0f4f65e92c3536c77a586e3d9f103d3cdb8ce1a8ea.css?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for 127.0.0.1 at 2015-12-03 15:51:33 -0500
+
+
+Started GET "/puzzles/7" for 127.0.0.1 at 2015-12-03 15:51:37 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/boards.self-8687c60e33c850c21ea66f0f4f65e92c3536c77a586e3d9f103d3cdb8ce1a8ea.css?body=1" for 127.0.0.1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for 127.0.0.1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:51:37 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:51:46 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.6ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 143ms (Views: 141.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:52:41 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 332ms (Views: 330.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/boards.self-a6fde1792c4715e16dabca14c93e4c177dcb25620017b412c6c0bc8758bbc847.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:52:41 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:53:17 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 173ms (Views: 171.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/boards.self-5a8c0a44f68e16ffb75a37c2022fb4fbcb765a032973f3360aedce62ff0b2130.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:53:17 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:53:28 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.2ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 125ms (Views: 123.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/boards.self-5fdf58b8d0d77be784d19c99e65e8eb6f81b1bb9525299576dcf857a7387ad9c.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:53:28 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:54:48 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.6ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.2ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.5ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 282ms (Views: 279.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/boards.self-43fc063744adb30ac6fc98ae719449ebb37971474c850c6b10a8919902bbdc96.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:54:48 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:54:49 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:57:13 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.5ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.6ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 485ms (Views: 482.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/boards.self-c9e7e4ea6b9e21100ea1a34565fd1e868b59f18f1e0b40d104978e38b08ae9a9.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:57:14 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:57:21 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 100ms (Views: 98.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/boards.self-c9e7e4ea6b9e21100ea1a34565fd1e868b59f18f1e0b40d104978e38b08ae9a9.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:57:21 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 15:57:25 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 132ms (Views: 129.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/boards.self-43fc063744adb30ac6fc98ae719449ebb37971474c850c6b10a8919902bbdc96.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/colors.self-6c3d0c57c12d97122acb807dca78eabea7dc9b0dc776d68d03183e2b3b2f9c91.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 15:57:25 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:00:47 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 526ms (Views: 523.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/colors.self-73fcf516ca0c17ff4538a99423ab9472ee0664e2989544e33e358976ebf9f818.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:00:48 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:01:11 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (1.2ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 124ms (Views: 120.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/colors.self-73fcf516ca0c17ff4538a99423ab9472ee0664e2989544e33e358976ebf9f818.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:01:11 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:01:24 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.6ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.6ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 294ms (Views: 291.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:01:24 -0500
+
+
+Started GET "/assets/colors.self-a27cd9535936944529e8860c8ed4b5b38222c256dbd3203c95e46e101d07f48d.js?body=1" for ::1 at 2015-12-03 16:01:25 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:01:25 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:01:25 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:01:29 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 95ms (Views: 93.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/colors.self-a27cd9535936944529e8860c8ed4b5b38222c256dbd3203c95e46e101d07f48d.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:01:29 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:01:37 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 195ms (Views: 193.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:01:37 -0500
+
+
+Started GET "/assets/colors.self-2daf1136294594c59e18eff771fe73591cf9ee38c347144ff6bec1ed3f8fa05b.js?body=1" for ::1 at 2015-12-03 16:01:38 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:01:38 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:01:38 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:02:25 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.0ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 360ms (Views: 357.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:02:26 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:02:30 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.2ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 92ms (Views: 90.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:02:30 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:04:31 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.2ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.2ms)
+  Rendered puzzles/_grid.html.erb (0.5ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.5ms)
+  Rendered puzzles/show.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 232ms (Views: 230.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:04:31 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:10:36 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.9ms)
+  Rendered puzzles/_grid.html.erb (0.4ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.6ms)
+  Rendered puzzles/show.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 248ms (Views: 246.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:10:37 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:11:33 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.7ms)
+  Rendered puzzles/show.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 339ms (Views: 337.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/cube.self-877098d375fcf2957115976809d26df1b05ac3e56c44c4b7054a1d6fb8f20444.css?body=1" for ::1 at 2015-12-03 16:11:33 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:11:34 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:11:42 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (2.6ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 144ms (Views: 141.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/cube.self-877098d375fcf2957115976809d26df1b05ac3e56c44c4b7054a1d6fb8f20444.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:11:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:11:43 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:11:49 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.2ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.2ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 203ms (Views: 201.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cube.self-27fd6fb17cbd83411efff17fbe7e29e621f47dae0ea0e006138ed17c5acb472c.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:11:49 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:11:51 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 125ms (Views: 123.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/cube.self-27fd6fb17cbd83411efff17fbe7e29e621f47dae0ea0e006138ed17c5acb472c.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:11:51 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:11:54 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPuzzle Load (0.2ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (1.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.0ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/_home.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 95ms (Views: 94.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:11:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/encryption.self-6920343fac2660a73d1ee9461074569047320f6e3f1d224d56b69a5f835f4758.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/colors.self-4c34c99fb08dd2fe898d3594d1c2ba12b9c6887186ca02f59a0fdc22dc472cf8.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:11:55 -0500
+
+
+Started GET "/puzzles/7" for ::1 at 2015-12-03 16:33:47 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPuzzle Load (0.8ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_bar.html.erb (3.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.2ms)
+  Rendered puzzles/_home.html.erb (0.2ms)
+  Rendered puzzles/show.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 753ms (Views: 749.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/colors.self-c151517541b6ae184ea34251b89f6f0bd2eb12de8af479095df37e29fd15684b.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/encryption.self-5b23851df66a2e96d35152bfa42fb22b2f724e3d5a7f86e0d1f18326b025a64a.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/mini.self-ccc898a4e7f8fe1c49c3b61459a122deb3cd7dfdc082730cb9f17bde5b4ab260.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/overview.self-11058ec86a8427bf9cc884ec53f2ff5738e6466c2be5cc6ac55e3fdc3859f566.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/boards.self-337cef834a2dc5633a68c4cb0ebca913e284f7dcd1936cc81bd3363db4cd4949.css?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/click.self-165a7a1966649c73fb51cb499563c8b036bbaf876b4957a2945fb904dd6854cd.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-03 16:33:48 -0500

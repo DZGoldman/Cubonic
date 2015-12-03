@@ -13,10 +13,23 @@ var encrypt = function($board) {
 
 //takes in an encrypted string and an empty grid, decodes string and puts corresponding colors on grid
 var decrypt = function(string, board) {
-var grid= board.children().children().children()
+var grid= board.children().children().children();
   var array = string.split("")
 
   array.forEach(function(number, index) {
     $(grid[index]).attr("class", sides[number])
+  })
+}
+
+
+
+
+var decryptMini=function (string, board) {
+  var grid = board.chldren().children();
+  var array = string.split("")
+
+  array.forEach(function (number,index) {
+    $(grid[index]).attr('background-color') = colors[number]
+
   })
 }

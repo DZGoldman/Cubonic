@@ -6,8 +6,16 @@ var side4 = 'show-left'
 var side5 = 'show-top'
 var side6 = 'show-bottom'
 
+var sides = [side1, side2, side3, side4, side5, side6];
 
-var sides = [side1, side2, side3, side4, side5, side6]
+var color1 = "rgb(8, 101, 61)"
+var color2 = "rgb(23, 241, 208)"
+var color3 = "rgb(232, 23, 23)"
+var color4 = "rgb(11, 191, 31)"
+var color5 = "rgb(249, 132, 11)"
+var color6 = "rgb(126, 2, 240)"
+
+var colors =[color1,color2,color3,color4,color5,color6]
 
 //bump up color, reset after color 5. To be invoked on clicked
 var rotateCube = function(cube) {
@@ -40,3 +48,7 @@ var rotateCube = function(cube) {
       break
   }
 };
+
+$('[row=1]').mouseover(function () {
+$('[row=1]').attr('background-color', 'red')
+})
