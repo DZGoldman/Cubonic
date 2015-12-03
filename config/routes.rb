@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get 'users/show'
 
 
-  root to: "sessions#new"
+  root to: "puzzles#index"
   # root to: "puzzles#index"
   get   'login'   => 'sessions#new'
   post  'login'   => 'sessions#create'
