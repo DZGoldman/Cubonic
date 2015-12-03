@@ -1,0 +1,31 @@
+.button:hover {
+  background: #b4c11f;
+}
+
+#reset{
+  float: left;
+  margin: 10px;
+}
+
+
+
+
+.button {
+  background: #f0da1a;
+  color: rgb(73, 83, 11);
+  font-family: Sans-serif;
+  font-size: 20px;
+  height: 60px;
+  width: 150px;
+  line-height: 60px;
+  margin: 25px;
+  text-align: center;
+  border: 0;
+  transition: all 0.2s ease 0s;
+}
+.home {
+  font-size: 25px;
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}

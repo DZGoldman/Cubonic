@@ -1,0 +1,24 @@
+
+#click_board,
+#static_board {
+  float: left;
+}
+
+#show_page_boards {
+  width: 1250px;
+  display: inline-block;
+}
+
+#win {
+  width: 300px;
+  color: rgb(73, 83, 11);
+  border-radius: 20px;
+  display: none;
+}
+
+
+#directions {
+  padding: 5px;
+  font-style: oblique;
+  font-size: 20px;
+}

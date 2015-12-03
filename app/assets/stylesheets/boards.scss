@@ -1,0 +1,16 @@
+
+.board {
+  width: 570px;
+  font-size: 0;
+  background: black;
+}
+.row {
+  display: inline-block;
+}
+.box {
+  background-color: white;
+  width: 43px;
+  height: 43px;
+  float: left;
+    perspective: 1000px;
+}

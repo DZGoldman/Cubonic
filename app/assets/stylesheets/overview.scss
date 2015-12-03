@@ -1,0 +1,63 @@
+
+body {
+  background-color: black;
+  color: white;
+}
+
+
+#puzzle_notes {
+  background-color: white;
+}
+
+li {
+  background-color: rgb(7, 7, 43);
+  font-size: 25px;
+  margin: 20px;
+  border: 5px solid blue;
+  border-style: groove;
+  border-radius: 15px;
+  padding: 15px;
+  width: 270px;
+  height: 280px;
+  display: inline-block;
+  overflow: hidden;
+}
+#status_bar {
+  font-size: 25px;
+  display: inline;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+input,
+#puzzle_notes {
+  font-size: 25px;
+  background-color: rgb(172, 221, 185);
+  width: auto;
+  height: 35px;
+}
+.alert {
+  color: red;
+}
+.page_header,
+#sub_title {
+  margin: 30px;
+}
+#sub_title {
+  font-style: italic;
+}
+#starting_clicks {
+  font-size: 20px;
+}
+.notes {
+  font-size: 25px;
+}
+
+
+#pattern,
+#puzzle_pattern,
+#puzzle_clicks_created,
+.hidden {
+  display: none;
+}
