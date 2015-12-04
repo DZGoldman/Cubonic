@@ -5,14 +5,14 @@
   background: black;
 }
 .grid_row {
-  display: inline-block;
+  // display: inline-block;
 }
 .box {
   background-color: black;
   width: 43px;
   height: 43px;
   float: left;
-    perspective: 1000px;
+  perspective: 1000px;
 }
 
 // [row="1"]:hover{
