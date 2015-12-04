@@ -44,20 +44,23 @@ class PuzzlesController < ApplicationController
   end
 
   def win
-    # From a custom path: generates new Win object, gives it appropriate puzzle and user id
+    # Custom path:
       @puzzle= Puzzle.find(params[:id])
-
+      user_id = current_user.id
+      #figure out of the win should count:
       count_win = true
       @wins= Win.all
       @wins.each_with_index do |win|
-        current_user_wins = [];
-        if win.user_id==current_user.id
+        #if user has already beaten this puzzle,
+        if win.user_id==user_id
           if win.puzzle_id==@puzzle.id
+            #don't count it
             count_win=false
+            break
           end
         end
       end
-
+      #if it survived the loop, generate new Win object, gives it appropriate puzzle and user id
       if count_win
         @win= Win.new
         @win.user_id=current_user.id
@@ -69,8 +72,6 @@ class PuzzlesController < ApplicationController
         # @puzzle.best_solution=@win.clicks
         @puzzle.best_solver=current_user.user_name
         @puzzle.save
-        else
-          puts'you already beat this puzzle'
       end
 
       redirect_to user_path(current_user)

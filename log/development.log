@@ -61951,3 +61951,338 @@ Started GET "/assets/logo.self-6dbe8d4742b7b899532ff35cf0b14335925b885debc74d796
 
 
 Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-04 14:46:21 -0500
+
+
+Started GET "/puzzles" for ::1 at 2015-12-04 14:55:59 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (409.6ms)
+  [1m[36mPuzzle Load (0.4ms)[0m  [1mSELECT "puzzles".* FROM "puzzles"[0m
+  Rendered puzzles/_minigrid.html.erb (0.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (473.6ms)
+Completed 200 OK in 957ms (Views: 544.9ms | ActiveRecord: 386.7ms)
+
+
+Started GET "/assets/boards.self-82346e508bb912a5d235a1c3a46e3cb3c9ed1b856110ae78d219bfb5ea40f137.css?body=1" for ::1 at 2015-12-04 14:56:00 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-04 14:56:00 -0500
+
+
+Started GET "/assets/bootstrap.self-ca2fc5f3cb21748c4db6e087adaa10fe709b38b6fb438948bda8b4afc2bc04a7.css?body=1" for ::1 at 2015-12-04 14:56:00 -0500
+
+
+Started GET "/assets/level_mini.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-04 14:56:00 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-04 14:56:00 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/logo.self-6f589ca818e0e641ff3008453bd88300dd3c7104f47d58b7eaaab3dc243988d3.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/mini.self-189da110c54fb64ab87641a813bafa6c90e06ef2978fa749857eb3d5f74d48e0.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/overview.self-d1b52dd5188d88f696e22c430cebf039b1e6c3645bfdc501b78fd88af9550abf.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/click.self-45c0b6343fce44704bf81ddc92b5d68d322da8af3392bfa2db4c34d5dffd2c7d.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/colors.self-c151517541b6ae184ea34251b89f6f0bd2eb12de8af479095df37e29fd15684b.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/logo.self-6dbe8d4742b7b899532ff35cf0b14335925b885debc74d796590a6db02437733.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/assets/encryption.self-0a0ede37bdd81efb92f03321da0861f37362b4f9ea527b49a09882c8aac301e3.js?body=1" for ::1 at 2015-12-04 14:56:01 -0500
+
+
+Started GET "/users/2" for ::1 at 2015-12-04 14:56:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/_bar.html.erb (2.7ms)
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mWin Load (0.4ms)[0m  [1mSELECT "wins".* FROM "wins"[0m
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 233ms (Views: 170.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/puzzles/1" for ::1 at 2015-12-04 14:56:04 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (2.0ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 159ms (Views: 157.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/puzzles" for ::1 at 2015-12-04 14:56:08 -0500
+Processing by PuzzlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (1.5ms)
+  [1m[35mPuzzle Load (0.4ms)[0m  SELECT "puzzles".* FROM "puzzles"
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered puzzles/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 143ms (Views: 141.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/puzzles/8" for ::1 at 2015-12-04 14:56:09 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (2.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.0ms)
+  Rendered puzzles/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 164ms (Views: 162.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/puzzles/8" for ::1 at 2015-12-04 14:56:15 -0500
+Processing by PuzzlesController#win as HTML
+  Parameters: {"authenticity_token"=>"V7h7TwyP9VPNuM8Z+jsq3nc+QxxUMCYzryai1silDcKAbmbmvO9hRCtaXp4a8HttFVGpntJx/oEZwwRMlwlnig==", "id"=>"8"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mWin Load (0.4ms)[0m  [1mSELECT "wins".* FROM "wins"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wins" ("user_id", "puzzle_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["puzzle_id", 8], ["created_at", "2015-12-04 19:56:15.544327"], ["updated_at", "2015-12-04 19:56:15.544327"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "puzzles" SET "best_solver" = $1, "updated_at" = $2 WHERE "puzzles"."id" = $3[0m  [["best_solver", "Dog"], ["updated_at", "2015-12-04 19:56:15.548892"], ["id", 8]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 19ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users/2" for ::1 at 2015-12-04 14:56:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/_bar.html.erb (2.4ms)
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mWin Load (0.4ms)[0m  SELECT "wins".* FROM "wins"
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 309ms (Views: 305.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/puzzles/8" for ::1 at 2015-12-04 14:56:21 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (2.0ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.1ms)
+  Rendered puzzles/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 110ms (Views: 108.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/puzzles/8" for ::1 at 2015-12-04 14:56:26 -0500
+Processing by PuzzlesController#win as HTML
+  Parameters: {"authenticity_token"=>"gi0AfLEjxgI0dmKQUj7rP1L9Ez/W99HSCR/y2pe648dV+x3VAUNSFdKU8xey9bqMMJL5vVC2CWC/+lRAyBaJjw==", "id"=>"8"}
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mWin Load (0.4ms)[0m  [1mSELECT "wins".* FROM "wins"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for ::1 at 2015-12-04 14:56:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/_bar.html.erb (2.2ms)
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mWin Load (0.4ms)[0m  SELECT "wins".* FROM "wins"
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 154ms (Views: 150.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/2" for ::1 at 2015-12-04 14:58:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/_bar.html.erb (4.2ms)
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered puzzles/_minigrid.html.erb (0.2ms)
+  [1m[35mWin Load (0.5ms)[0m  SELECT "wins".* FROM "wins"
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPuzzle Load (0.2ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (102.2ms)
+Completed 200 OK in 576ms (Views: 525.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/puzzles/8" for ::1 at 2015-12-04 14:58:48 -0500
+Processing by PuzzlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (2.7ms)
+  Rendered puzzles/_grid.html.erb (0.3ms)
+  Rendered puzzles/_grid.html.erb (0.1ms)
+  Rendered puzzles/_buttons.html.erb (0.3ms)
+  Rendered puzzles/show.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 173ms (Views: 171.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-12-04 14:59:50 -0500
+Processing by PuzzlesController#levels as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "DZack"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (4.3ms)
+  [1m[35mPuzzle Load (0.3ms)[0m  SELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1  [["user_id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.1ms)
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  Rendered puzzles/levels.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 227ms (Views: 223.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-04 15:00:19 -0500
+Processing by PuzzlesController#levels as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "DZack"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered puzzles/_bar.html.erb (2.6ms)
+  [1m[36mPuzzle Load (0.6ms)[0m  [1mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered puzzles/_minigrid.html.erb (0.7ms)
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  Rendered puzzles/_minigrid.html.erb (0.0ms)
+  Rendered puzzles/levels.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 168ms (Views: 164.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap.self-ca2fc5f3cb21748c4db6e087adaa10fe709b38b6fb438948bda8b4afc2bc04a7.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/buttons.self-b424afef072c912845a01bb8b535b8db7b545860485a7757cacc8e1ba43b6824.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/edit.self-162256f57e1d37feab8af2c1c39f7fa9ff4f6b9f58cd05805299c530645caf6b.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/level_mini.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/cube.self-1fc338f4b41b6fd2ab4bea3fe8a59ddf9b7cb4719f5c652effbdddb9f5b1298b.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/boards.self-82346e508bb912a5d235a1c3a46e3cb3c9ed1b856110ae78d219bfb5ea40f137.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/logo.self-6f589ca818e0e641ff3008453bd88300dd3c7104f47d58b7eaaab3dc243988d3.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/new.self-34fa88598177637cea001acf1ec970b63fe864ff2c5d737ef001708defd5aefa.css?body=1" for ::1 at 2015-12-04 15:00:19 -0500
+
+
+Started GET "/assets/mini.self-189da110c54fb64ab87641a813bafa6c90e06ef2978fa749857eb3d5f74d48e0.css?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/overview.self-d1b52dd5188d88f696e22c430cebf039b1e6c3645bfdc501b78fd88af9550abf.css?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/show.self-b5b8c53ae0789c5c0e253ef37ce4f0ea042b678a3478034f91036e75bf2dc795.css?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/buttons.self-c39962ce70bba71705d924518377c30f51e34281aedb4efaa435c075052d41ff.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/colors.self-c151517541b6ae184ea34251b89f6f0bd2eb12de8af479095df37e29fd15684b.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/click.self-45c0b6343fce44704bf81ddc92b5d68d322da8af3392bfa2db4c34d5dffd2c7d.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/encryption.self-0a0ede37bdd81efb92f03321da0861f37362b4f9ea527b49a09882c8aac301e3.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/logo.self-6dbe8d4742b7b899532ff35cf0b14335925b885debc74d796590a6db02437733.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
+
+
+Started GET "/assets/application.self-858cdb248120f9e78a42d94b8c363c483acbf0cb7e836df7250190e7674b84b2.js?body=1" for ::1 at 2015-12-04 15:00:20 -0500
