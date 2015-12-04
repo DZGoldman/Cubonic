@@ -3,6 +3,7 @@ class CreatePuzzles < ActiveRecord::Migration
     create_table :puzzles do |t|
       t.text :pattern
       t.text :notes
+      t.text :best_solver
       t.integer :best_solution
       t.integer :clicks_created
       t.references :user, index: true, foreign_key: true

@@ -10,7 +10,12 @@
 <%end %>
 
 <p class="notes">
-  This puzzle was created with <%= @puzzle.clicks_created %> clicks
+  This puzzle was created with <%= @puzzle.clicks_created %> clicks.
+  <%if @puzzle.best_solution  %>
+  The best solution was <%= @puzzle.best_solution%> clicks by <%= @puzzle.best_solver %>
+  <% else %>
+  It hasn't been solved yet
+  <% end %>
 </p>
 <%# put pattern in a hidden div so javascript can access it %>
 <div id="pattern"><%=@puzzle.pattern %></div>

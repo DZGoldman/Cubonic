@@ -25,10 +25,13 @@ var grid= board.children().children().children();
 
 
 var decryptMini=function (string, board) {
-  var grid = board.chldren().children();
+  var grid = board.children().children();
   var array = string.split("")
 
   array.forEach(function (number,index) {
+    console.log(number);
+    // console.log('test1', board.attr('id'));
+    // console.log('test', $(grid[index]));
     $(grid[index]).attr('background-color') = colors[number]
 
   })

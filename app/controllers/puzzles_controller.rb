@@ -1,7 +1,10 @@
 class PuzzlesController < ApplicationController
 
   def levels
-      @puzzles= Puzzle.all
+      @puzzles= User.find_by(user_name:"DZack").puzzles
+      # instead of all puzzles, only puzzles by DZack (admin)
+
+      # or search through puzzles, find all where user id is DZack's id
   end
   def index
     @puzzles= Puzzle.all
@@ -46,6 +49,12 @@ class PuzzlesController < ApplicationController
       @win.user_id=current_user.id
       @win.puzzle_id=@puzzle.id
       @win.save
+
+      # check to see if the clicks it took to win is the best solution; if so, update best solution
+      # if @puzzle.best_solution==nil || @puzzle.best_solution < @win.clicks
+      #  @puzzle.best_solution=@win.clicks
+      #   @puzzle.best_solver=current_user.user_name
+      # end
       redirect_to user_path(current_user)
   end
 

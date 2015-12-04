@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151107195149) do
   create_table "puzzles", force: :cascade do |t|
     t.text     "pattern"
     t.text     "notes"
+    t.text     "best_solver"
     t.integer  "best_solution"
     t.integer  "clicks_created"
     t.integer  "user_id"

@@ -1,4 +1,4 @@
-<h1>Levels</h1>
+
 <%= render partial: 'bar' %>
 <h1 class="page_header"> Cubonic</h1>
 <h2 id="sub_title">Your New Favorite User Generated Logic Puzzle Platformer</h2>
@@ -13,11 +13,7 @@
 <% end %>
 
 
-<p id="new_puzzle_button">
-  <% if logged_in? %>
-  <%= link_to "Create Your Own Puzzle", new_puzzle_path %>
-  <% end %>
-</p>
+
 
 <ul id="puzzles">
   <% @puzzles.reverse.each_with_index do |puzzle, index| %>
