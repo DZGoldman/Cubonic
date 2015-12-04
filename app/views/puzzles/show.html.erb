@@ -20,7 +20,7 @@
 <%# put pattern in a hidden div so javascript can access it %>
 <div id="pattern"><%=@puzzle.pattern %></div>
 
-<% if current_user %>
+<% if current_user && current_user.id != @puzzle.user_id %>
 <div id="win" class="button">
   <%= link_to "Solved! Click to record your win", puzzle_path(@puzzle), method: :win  %>
 </div>
