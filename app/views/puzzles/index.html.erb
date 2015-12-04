@@ -37,7 +37,7 @@
     // = require jquery
       var index= <%=index%>;
       var encryptedGrid = $('#mini_encrypt'+index).text();
-      var board= $('#mini_board'+index)
+      var board= $('#mini_board'+index).children().children()
       decryptMini( encryptedGrid, board)
     </script>
 
