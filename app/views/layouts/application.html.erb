@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Olay</title>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1">
+        <div id='logo_container'>
+          <div class='show-front' type='logo'>
+            <figure class="front"></figure>
+            <figure class="back"></figure>
+            <figure class="right"></figure>
+            <figure class="left"></figure>
+            <figure class="top"></figure>
+            <figure class="bottom"></figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" id=''>
+        <br>
+        <br>
+        <h1> Cubonic</h1>
+      </div>
+      <div class='col-sm-5'>
+
+  <%= render partial: 'bar' %>
+
+      </div>
+    </div>
+  </div>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
 </head>
+
 <body>
-  
-<%= yield %>
+
+  <%= yield %>
 
 </body>
+
 </html>

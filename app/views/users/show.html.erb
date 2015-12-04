@@ -3,7 +3,7 @@
 
 <h1><%= @user.user_name%>'s Created Puzzles</h1>
 <% @user.puzzles.each_with_index do |puzzle, index| %>
-  <li>
+  <li class="user-mini-li">
 
 
     <%= link_to puzzle_path(puzzle) do %>
@@ -40,7 +40,7 @@
       <% @puzzle=Puzzle.find(win.puzzle_id) %>
 
       <%= link_to puzzle_path(@puzzle) do %>
-      <li>
+      <li class="user-mini-li">>
         <div id="mini-board<%=index+1000%>" class="board mini_board">
           <%= render partial: './puzzles/minigrid' %>
           <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %>

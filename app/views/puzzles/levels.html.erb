@@ -1,21 +1,4 @@
 
-<%= render partial: 'bar' %>
-
-<div id='logo_container'>
-  <div class='show-front' type='logo'>
-    <figure class="front"></figure>
-    <figure class="back"></figure>
-    <figure class="right"></figure>
-    <figure class="left"></figure>
-    <figure class="top"></figure>
-    <figure class="bottom"></figure>
-  </div>
-</div>
-<h1 class="page_header"> Cubonic</h1>
-<h2 id="sub_title">A Game of Cubes</h2>
-
-
-
 
 <% flash.each do |message_type, message| %>
 <div class="alert alert-<%= message_type %>">
@@ -31,7 +14,7 @@
 
 
 <%# render a mini board with unique id %>
-  <li>
+  <li class='level-mini-li'>
     <%= link_to puzzle_path(puzzle) do %>
     <div id="mini_board<%=index%>" class="board mini_board">
       <%= render partial: 'minigrid' %>

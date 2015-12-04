@@ -1,4 +1,4 @@
-<div id="status_bar">
+<div id='status-bar'>
 <% if logged_in? %>
   <p> Hi <%= link_to current_user.user_name, user_path(current_user) %> <%= link_to "User Generated Puzzles", puzzles_path %> <%= link_to "Home", root_path %>  <%=link_to "Log Out", logout_path %></p>
   <% if current_user.is_admin %>
@@ -6,6 +6,50 @@
   <% end %>
   <%else%>
       <p><%= link_to "User Generated Puzzles", puzzles_path %> <%= link_to "Home", root_path %>  <%=link_to "Log In", login_path %> <%=link_to "Sign Up", new_user_path %></p>
-
 <% end %>
 </div>
+
+<!-- 
+<nav class="navbar navbar-default navbar-fixed-top">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+           <a class="navbar-brand" href="/">Resu-Me</a>
+         </div>
+         <div>
+           <div class="collapse navbar-collapse" id="myNavbar">
+           <ul class="nav navbar-nav">
+             <li class="active"></li>
+             <li><a href="/newresume">Write New Resume</a></li>
+             <li><a href="https://github.com/DZGoldman/Resu-Me/" target="_blank">About</a></li>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+
+
+             <li>
+               <a href="/signup">
+                 <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+             </li>
+             <li>
+               <a href="/login">
+                 <span class="glyphicon glyphicon-log-in"></span> Login</a>
+             </li>
+
+                <li>
+                  <a href="/profile">
+                    <span class="glyphicon glyphicon-user"></span> </a>
+                </li>
+                <li>
+                  <a href="/logout">
+                    <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+                </li>
+
+
+           </ul>
+         </div>
+       </div>
+     </nav> -->

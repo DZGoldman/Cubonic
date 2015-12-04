@@ -1,5 +1,4 @@
 <h1>A Puzzle By <%=@puzzle.user.user_name%></h1>
-<%= render partial: 'bar' %>
 
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
