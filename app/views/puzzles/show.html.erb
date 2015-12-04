@@ -11,8 +11,8 @@
 
 <p class="notes">
   This puzzle was created with <%= @puzzle.clicks_created %> clicks.
-  <%if @puzzle.best_solution  %>
-  The best solution was <%= @puzzle.best_solution%> clicks by <%= @puzzle.best_solver %>
+  <%if @puzzle.best_solver %>
+  Last Solved by <%= @puzzle.best_solver %>
   <% else %>
   It hasn't been solved yet
   <% end %>
@@ -20,11 +20,15 @@
 <%# put pattern in a hidden div so javascript can access it %>
 <div id="pattern"><%=@puzzle.pattern %></div>
 
+<% if current_user %>
 <div id="win" class="button">
   <%= link_to "Solved! Click to record your win", puzzle_path(@puzzle), method: :win  %>
-
 </div>
-
+<%else %>
+<div id="win">
+Solved
+</div>
+<% end %>
 <div id="show_page_boards">
 
   <div>
