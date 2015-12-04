@@ -5,7 +5,7 @@
   <li>
 
 
-      <%= link_to puzzle_path(puzzle) do %>
+    <%= link_to puzzle_path(puzzle) do %>
     <div id="mini-board<%=index%>" class="board mini_board">
       <%# this next line is the only diffrence between index page %>
       <%= render partial: './puzzles/minigrid' %>
@@ -24,7 +24,6 @@
     </script>
 
 
-
     <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
     <% unless current_user==nil %>
       <%if current_user==@user || current_user.is_admin %>
@@ -35,12 +34,28 @@
 <% end %>
 
 <h1> Puzzles <%= @user.user_name%> has solved</h1>
-<% @wins.each do |win| %>
+<% @wins.each_with_index do |win, index| %>
   <% if win.user_id == @user.id %>
       <% @puzzle=Puzzle.find(win.puzzle_id) %>
+
+      <%= link_to puzzle_path(@puzzle) do %>
       <li>
-        <%=link_to "Play!", puzzle_path(@puzzle) %> <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %>
+        <div id="mini-board<%=index+1000%>" class="board mini_board">
+          <%= render partial: './puzzles/minigrid' %>
+          <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %>
+        </div>
       </li>
-    <% end %>
+      <% end %>
+
+      <div id="mini_encrypt<%=index+1000%>" class="hidden"><%= @puzzle.pattern%></div>
+      <%# decrypt, put onto each mini board %>
+      <script>
+      // = require jquery
+
+        var encryptedGrid = $('#mini_encrypt'+(index+1000)).text();
+        var board= $('#mini-board'+(index+1000)).children().children()
+        decryptMini( encryptedGrid, board)
+      </script>
+  <% end %>
 
 <% end %>
