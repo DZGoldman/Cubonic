@@ -46,17 +46,32 @@ class PuzzlesController < ApplicationController
   def win
     # From a custom path: generates new Win object, gives it appropriate puzzle and user id
       @puzzle= Puzzle.find(params[:id])
-      @win= Win.new
-      @win.user_id=current_user.id
-      @win.puzzle_id=@puzzle.id
-      #@win.clicks?
-      @win.save
 
-      # @puzzle.best_solution < @win.clicks
-      #check to see if the clicks it took to win is the best solution; if so, update best solution
-      # @puzzle.best_solution=@win.clicks
+      count_win = true
+      @wins= Win.all
+      @wins.each_with_index do |win|
+        current_user_wins = [];
+        if win.user_id==current_user.id
+          if win.puzzle_id==@puzzle.id
+            count_win=false
+          end
+        end
+      end
+
+      if count_win
+        @win= Win.new
+        @win.user_id=current_user.id
+        @win.puzzle_id=@puzzle.id
+        #@win.clicks?
+        @win.save
+        # @puzzle.best_solution < @win.clicks
+        #check to see if the clicks it took to win is the best solution; if so, update best solution
+        # @puzzle.best_solution=@win.clicks
         @puzzle.best_solver=current_user.user_name
         @puzzle.save
+        else
+          puts'you already beat this puzzle'
+      end
 
       redirect_to user_path(current_user)
   end
