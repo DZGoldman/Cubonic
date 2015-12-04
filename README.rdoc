@@ -36,3 +36,11 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Added in Project Revamp:
+-Full refactor with cubes, including decreasing grids to 9x9
+-Full style revant
+-All minigrids display now
+-Improved Winning (can only record a win if it isn't your own and if you haven't alreay beaten it; keeps track of last player to beat a puzzle)
+-Single player mode with 10 levels (generating puzzles moved to side-feature)
+-Logo
