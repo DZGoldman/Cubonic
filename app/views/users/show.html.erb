@@ -1,3 +1,4 @@
+<%= render partial: 'bar' %>
 <h1><%= @user.user_name%>'s Page</h1>
 
 <h1><%= @user.user_name%>'s Created Puzzles</h1>
@@ -51,7 +52,7 @@
       <%# decrypt, put onto each mini board %>
       <script>
       // = require jquery
-
+          var index= <%=index%>;
         var encryptedGrid = $('#mini_encrypt'+(index+1000)).text();
         var board= $('#mini-board'+(index+1000)).children().children()
         decryptMini( encryptedGrid, board)
