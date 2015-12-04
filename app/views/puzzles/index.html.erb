@@ -1,4 +1,4 @@
-<h1 class="page_header"> Welcome to Olay</h1>
+<h1 class="page_header"> Cubonic: The User Puzzles</h1>
 <h2 id="sub_title">Your New Favorite User Generated Logic Puzzle Platformer</h2>
 
 
@@ -23,9 +23,11 @@
 
 <%# render a mini board with unique id %>
   <li>
+      <%= link_to puzzle_path(puzzle) do %>
     <div id="mini_board<%=index%>" class="board mini_board">
       <%= render partial: 'minigrid' %>
     </div>
+    <% end %>
     <%# fetch encrypted string to feed to encrypt function %>
     <div id="mini_encrypt<%=index%>" class="hidden"><%= puzzle.pattern%></div>
 
@@ -41,7 +43,7 @@
 
 
     <div class="links">
-    <%=link_to "Play Me!", puzzle_path(puzzle) %>
+
     <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
 
 
