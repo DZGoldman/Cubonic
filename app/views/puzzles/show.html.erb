@@ -1,17 +1,24 @@
-<h1>A Puzzle By <%=@puzzle.user.user_name%></h1>
+<h1>A Puzzle By
+  <%=@puzzle.user.user_name%></h1>
 
 <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
+<div class="alert alert-<%= message_type %>">
+  <h1><%= message %></h1>
+</div>
 <% end %>
 
 <% unless @puzzle.notes=="" %>
-  <p class="notes"> Notes: "<%= @puzzle.notes %>"</p>
+<p class="notes">
+  Notes: "<%= @puzzle.notes %>"</p>
 <%end %>
 
 <p class="notes">
-  This puzzle was created with <%= @puzzle.clicks_created %> clicks.
+  This puzzle was created with
+  <%= @puzzle.clicks_created %>
+  clicks.
   <%if @puzzle.best_solver %>
-  Last Solved by <%= @puzzle.best_solver %>
+  Last Solved by
+  <%= @puzzle.best_solver %>
   <% else %>
   It hasn't been solved yet
   <% end %>
@@ -20,30 +27,53 @@
 <div id="pattern"><%=@puzzle.pattern %></div>
 
 <% if current_user && current_user.id != @puzzle.user_id %>
-<div id="win" class="button">
+<div class="button" id="win">
   <%= link_to "Solved! Click to record your win", puzzle_path(@puzzle), method: :win  %>
 </div>
 <%else %>
 <div id="win">
-Solved
+  Solved
 </div>
 <% end %>
-<div id="show_page_boards">
+<div class="container">
 
-  <div>
-      <div class="board" id="click_board">
+  <div class="row" id="show_page_boards">
+    <div class="board col-md-5" id="click_board">
       <%= render partial: 'grid' %>
-      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="board col-md-5" id="static_board">
+      <%= render partial: 'grid' %>
+    </div>
 
-      <div class="board" id="static_board">
-        <%= render partial: 'grid' %>
-      </div>
-        <%= render partial: 'buttons' %>
+  </div>
 </div>
+<div class="container-fluid">
 
+  <div class"row" id="key-container">
+    <div class="key col-md-1" id= "key1">1
+    </div>
+    <div class="key col-md-1" id= "key2">2
+    </div>
+    <div class="key col-md-1" id= "key3">3
+    </div>
+    <div class="key col-md-1" id= "key4">4
+    </div>
+    <div class="key col-md-1" id= "key5">5
+    </div>
+    <div class="key col-md-1" id= "key6">6
+    </div>
+
+</div>
+  </div>
+
+<%= render partial: 'buttons' %>
 <p id="directions">
-  Directions: <br><br>
-  Try to create the image on the right on the board on the left. <br><br>
-  Each click colors in a 3x3 box. <br><br>
+  Directions:
+  <br><br>
+  Try to create the image on the right on the board on the left.
+  <br><br>
+  Each click colors in a 3x3 box.
+  <br><br>
   Overlapping changes colors.
 </p>

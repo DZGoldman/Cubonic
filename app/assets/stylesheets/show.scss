@@ -1,13 +1,14 @@
-
+//
 #click_board,
 #static_board {
   float: left;
+  margin: 30px
 }
 
-#show_page_boards {
-  width: 1250px;
-  display: inline-block;
-}
+// #show_page_boards {
+//   width: 1250px;
+//   display: inline-block;
+// }
 
 #win {
   width: 300px;
@@ -21,4 +22,31 @@
   padding: 5px;
   font-style: oblique;
   font-size: 20px;
+}
+
+
+.key{
+  display: inline-block;
+}
+#key1{
+  background-color: rgb(8, 101, 61)
+
+}
+
+#key2{
+  background-color: rgb(23, 241, 208)
+
+}
+#key3{
+background-color: rgb(232, 23, 23)
+}
+#key4{
+background-color: rgb(11, 191, 31)
+}
+
+#key5{
+background-color: rgb(249, 132, 11)
+}
+#key6{
+background-color: rgb(126, 2, 240)
 }
