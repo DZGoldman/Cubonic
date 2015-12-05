@@ -4,46 +4,72 @@
 <head>
 
   <title>Olay</title>
-  <div class="container">
+  <div class="container-fluid header-bar">
     <div class="row">
       <div class="col-sm-1">
         <div id='logo_container'>
           <%= link_to root_path do %>
-          <div class='show-front' type='logo'>
-            <figure class="front"></figure>
-            <figure class="back"></figure>
-            <figure class="right"></figure>
-            <figure class="left"></figure>
-            <figure class="top"></figure>
-            <figure class="bottom"></figure>
-          </div>
-          <% end %>
+            <div class='show-front' type='logo'>
+              <figure class="front"></figure>
+              <figure class="back"></figure>
+              <figure class="right"></figure>
+              <figure class="left"></figure>
+              <figure class="top"></figure>
+              <figure class="bottom"></figure>
+            </div>
+            <% end %>
         </div>
       </div>
-      <div class="col-sm-2" id=''>
+      <div class="col-sm-1" id=''>
         <br>
         <br>
         <h1> Cubonic</h1>
       </div>
-      <div class='col-sm-7'>
+      <div class='col-sm-5'>
 
-        <nav class="navbar navbar-right navigation-bar">
-          <% if logged_in? %>
-          <div class="btn navbar-btn" type="div">  <%= link_to current_user.user_name, user_path(current_user) %></div>
-          <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>
-          <div class="btn navbar-btn" type="div"><%= link_to "Home", root_path %></div>
-          <div class="btn navbar-btn" type="div">        <%=link_to "Log Out", logout_path %></div>
-          <% else %>
-          <div class="btn navbar-btn" type="div">  <%=link_to "Log In", login_path %></div>
-          <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>
-          <div class="btn navbar-btn" type="div"><%= link_to "Home", root_path %></div>
-          <div class="btn navbar-btn" type="div">      <%=link_to "Sign Up", new_user_path %></div>
-          <% end %>
-        </nav>
 
+
+      </div>
+      <div class='col-sm-2'>
+        </div>
       </div>
     </div>
   </div>
+
+  <nav class="navbar nav-tabs navigation-bar">
+    <div class="container-fluid">
+
+      <% if logged_in? %>
+        <div class="btn navbar-btn" type="div">
+          <%= link_to current_user.user_name, user_path(current_user) %>
+        </div>
+        <div class="btn navbar-btn" type="div">
+          <%= link_to "User Generated Puzzles", puzzles_path %>
+        </div>
+        <div class="btn navbar-btn" type="div">
+          <%= link_to "Home", root_path %>
+        </div>
+        <div class="btn navbar-btn" type="div">
+          <%=link_to "Log Out", logout_path %>
+        </div>
+        <% else %>
+          <div class="btn navbar-btn" type="div">
+            <%=link_to "Log In", login_path %>
+          </div>
+          <div class="btn navbar-btn" type="div">
+            <%= link_to "User Generated Puzzles", puzzles_path %>
+          </div>
+          <div class="btn navbar-btn" type="div">
+            <%= link_to "Home", root_path %>
+          </div>
+          <div class="btn navbar-btn" type="div">
+            <%=link_to "Sign Up", new_user_path %>
+          </div>
+
+          <% end %>
+    </div>
+  </nav>
+
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
