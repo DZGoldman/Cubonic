@@ -1,9 +1,9 @@
 //
-#click_board,
-#static_board {
-  float: left;
-  margin: 30px
-}
+// #click_board,
+// #static_board {
+//   float: left;
+//   margin: 30px
+// }
 
 // #show_page_boards {
 //   width: 1250px;
@@ -18,15 +18,20 @@
 }
 
 
-#directions {
-  padding: 5px;
+.directions {
+  padding-top: 20px;
   font-style: oblique;
-  font-size: 20px;
+  font-size: 24px;
+
 }
 
 
 .key{
-  display: inline-block;
+  display: inline;
+  height:30px;
+  color: black;
+  font-size: 25px;
+  text-align: center;
 }
 #key1{
   background-color: rgb(8, 101, 61)
@@ -49,4 +54,33 @@ background-color: rgb(249, 132, 11)
 }
 #key6{
 background-color: rgb(126, 2, 240)
+}
+figure{
+  text-align: center;
+  font-size: 28px;
+  color: black
+}
+
+// .creator-header-container{
+//   background-color: grey;
+//   margin-top: 15px;
+//   margin-bottom: 30px;
+// }
+// .creator-header-row{
+//   background-color: grey;
+//   margin-top: 15px;
+//   margin-bottom: 30px;
+// }
+.creator-header{
+  // background-color: rgb(70, 70, 70);
+  margin-top: 15px;
+  margin-bottom: 30px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center
+}
+
+.directions-container{
+
 }

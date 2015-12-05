@@ -1,5 +1,29 @@
-<h1>A Puzzle By
-  <%=@puzzle.user.user_name%></h1>
+<div class="container creator-header-container">
+  <div class="row creator-header-row">
+
+
+
+
+      <h3 class="col-md-4 creator-header" >
+        Created by
+          <%=@puzzle.user.user_name%> in
+        <%= @puzzle.clicks_created %>
+        clicks.
+        <%if @puzzle.best_solver %>
+        Last Solved by
+        <%= @puzzle.best_solver %>
+        <% else %>
+        Yet to be solved.
+        <% end %>
+      </h3>
+
+
+  </div>
+</div>
+<% unless @puzzle.notes=="" %>
+<p class="notes">
+  Notes: "<%= @puzzle.notes %>"</p>
+<%end %>
 
 <% flash.each do |message_type, message| %>
 <div class="alert alert-<%= message_type %>">
@@ -7,22 +31,6 @@
 </div>
 <% end %>
 
-<% unless @puzzle.notes=="" %>
-<p class="notes">
-  Notes: "<%= @puzzle.notes %>"</p>
-<%end %>
-
-<p class="notes">
-  This puzzle was created with
-  <%= @puzzle.clicks_created %>
-  clicks.
-  <%if @puzzle.best_solver %>
-  Last Solved by
-  <%= @puzzle.best_solver %>
-  <% else %>
-  It hasn't been solved yet
-  <% end %>
-</p>
 <%# put pattern in a hidden div so javascript can access it %>
 <div id="pattern"><%=@puzzle.pattern %></div>
 
@@ -38,42 +46,60 @@
 <div class="container">
 
   <div class="row" id="show_page_boards">
+
+    </div>
+    <div class="board col-md-1">
+
+      <%= render partial: 'buttons' %>
+    </div>
     <div class="board col-md-5" id="click_board">
       <%= render partial: 'grid' %>
     </div>
-    <div class="col-md-2"></div>
-    <div class="board col-md-5" id="static_board">
+
+    <div class="board col-md-6" id="static_board">
       <%= render partial: 'grid' %>
     </div>
 
+</div>
+<div class="container directions-container">
+  <div class"row">
+    <p class='col-md-5 col-md-offset-1 directions'>
+      Click on this grid...
+    </p>
+    <p class='col-md-6 directions'>
+      ...until it looks like this grid.
+    </p>
+  </div>
+  <div class"row">
+    <p class='col-md-4 directions'>
+      Clicking rotates all of the cubes in a 3x3 radius. No clicking on the edges.
+    </p>
+
   </div>
 </div>
-<div class="container-fluid">
 
-  <div class"row" id="key-container">
-    <div class="key col-md-1" id= "key1">1
-    </div>
-    <div class="key col-md-1" id= "key2">2
-    </div>
-    <div class="key col-md-1" id= "key3">3
-    </div>
-    <div class="key col-md-1" id= "key4">4
-    </div>
-    <div class="key col-md-1" id= "key5">5
-    </div>
-    <div class="key col-md-1" id= "key6">6
-    </div>
 
-</div>
+
+<!-- <div class="container">
+<div class="row">
+
+
+
+
+  <div class="key col-md-2" id="key1">Side One
   </div>
+  <div class="key col-md-2" id="key2">Side Two
+  </div>
+  <div class="key col-md-2" id="key3">Side Three
+  </div>
+  <div class="key col-md-2" id="key4">Side Four
+  </div>
+  <div class="key col-md-2" id="key5">Side Five
+  </div>
+  <div class="key col-md-2" id="key6">Side Six
 
-<%= render partial: 'buttons' %>
-<p id="directions">
-  Directions:
-  <br><br>
-  Try to create the image on the right on the board on the left.
-  <br><br>
-  Each click colors in a 3x3 box.
-  <br><br>
-  Overlapping changes colors.
-</p>
+  </div>
+</div>
+
+
+</div> -->
