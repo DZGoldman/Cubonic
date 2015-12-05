@@ -1,31 +1,37 @@
-#puzzles-container{
+.puzzles-container{
   // border: 1px solid white;
-  width: 1200px
+  width: 900px;
 }
 
 .index-mini-li, .user-mini-li{
- font-size: 25px;
+ // font-size: 25px;
  margin: 20px;
  // border: 5px solid blue;
  // border-style: groove;
  // border-radius: 15px;
  // padding: 15px;
- width: 165px;
- height: 250px;
+ // width: 165px;
+ // height: 250px;
  display: inline-block;
- overflow: hidden;
+ // overflow: hidden;
 }
 
 .mini_board {
-  width: 165px;
-  // border: 5px solid black;
- // border-radius: 60px;
+  width: 180px;
+  height: 180px;
+  // border: 5px solid blue;
+  // border-style: groove;
 }
 .mini_box {
   background_color: white;
   width: 20px;
   height: 20px;
   float: left;
+}
+
+.links{
+  color: black !important;
+  font-size: 24px;
 }
 
 //
