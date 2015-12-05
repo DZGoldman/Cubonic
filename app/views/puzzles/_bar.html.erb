@@ -1,4 +1,4 @@
-<div id='status-bar'>
+<!-- <div id='status-bar'>
 <% if logged_in? %>
   <p> Hi <%= link_to current_user.user_name, user_path(current_user) %> <%= link_to "User Generated Puzzles", puzzles_path %> <%= link_to "Home", root_path %>  <%=link_to "Log Out", logout_path %></p>
   <% if current_user.is_admin %>
@@ -7,9 +7,23 @@
   <%else%>
       <p><%= link_to "User Generated Puzzles", puzzles_path %> <%= link_to "Home", root_path %>  <%=link_to "Log In", login_path %> <%=link_to "Sign Up", new_user_path %></p>
 <% end %>
-</div>
+</div> -->
 
-<!-- 
+<nav class="navbar navbar-right navigation-bar">
+  <% if logged_in? %>
+  <div class="btn navbar-btn" type="div">  <%= link_to current_user.user_name, user_path(current_user) %></div>
+  <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>
+  <div class="btn navbar-btn" type="div"><%= link_to "Home", root_path %></div>
+  <div class="btn navbar-btn" type="div">        <%=link_to "Log Out", logout_path %></div>
+  <% else %>
+  <div class="btn navbar-btn" type="div">  <%=link_to "Log In", login_path %></div>
+  <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>
+  <div class="btn navbar-btn" type="div"><%= link_to "Home", root_path %></div>
+  <div class="btn navbar-btn" type="div">      <%=link_to "Sign Up", new_user_path %></div>
+  <% end %>
+</nav>
+
+<!--
 <nav class="navbar navbar-default navbar-fixed-top">
        <div class="container-fluid">
          <div class="navbar-header">
