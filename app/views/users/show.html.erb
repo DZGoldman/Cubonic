@@ -1,6 +1,16 @@
-<h1><%= @user.user_name%>'s Page</h1>
+<div class="container">
+  <div class="row">
+    <h1 class='col-md-4'><%= @user.user_name%>'s Page</h1>
+  </div>
+</div>
 
-<h1><%= @user.user_name%>'s Created Puzzles</h1>
+
+<br>
+<div class="container">
+  <div class="row">
+    <h2 class='col-md-4'><%= @user.user_name%>'s Puzzles</h2>
+  </div>
+</div>
 
 <ul class="container">
 
@@ -41,10 +51,15 @@
 </ul>
 <!-- container -->
 
-<h1>
-  Puzzles
-  <%= @user.user_name%>
-  has solved</h1>
+
+<div class="container">
+  <div class="row">
+
+<h2>Puzzles <%= @user.user_name%> has solved</h2>
+  </div>
+</div>
+
+
 
 <ul class='container'>
 
@@ -52,31 +67,35 @@
   <div class="col-md-3">
 
     <% if win.user_id == @user.id %>
-      <% @puzzle=Puzzle.find(win.puzzle_id) %>
+    <% @puzzle=Puzzle.find(win.puzzle_id) %>
 
     <!-- <%= link_to puzzle_path(@puzzle) do %> -->
-      <div class="user-mini-li">
-        <%= link_to puzzle_path(@puzzle) do %>
-        <div class="board mini_board" id="mini-board<%=index+1000%>">
-          <%= render partial: './puzzles/minigrid' %>
+    <div class="user-mini-li">
+      <%= link_to puzzle_path(@puzzle) do %>
+      <div class="board mini_board" id="mini-board<%=index+1000%>">
+        <%= render partial: './puzzles/minigrid' %>
         <!-- <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %> -->
-        </div>
-        <% end %>
       </div>
+      <% end %>
+    </div>
     <% end %>
 
-      <div class="hidden" id="mini_encrypt<%=index+1000%>"><%= @puzzle.pattern%></div>
+    <div class="hidden" id="mini_encrypt<%=index+1000%>"><%= @puzzle.pattern%></div>
     <%# decrypt, put onto each mini board %>
-      <script>
-        // = require jquery
-        var index = <%=index%>;
-        var encryptedGrid = $('#mini_encrypt' + (index + 1000)).text();
-        var board = $('#mini-board' + (index + 1000)).children()
-          .children()
-        decryptMini(encryptedGrid, board)
-      </script>
-      <% end %> <!-- ? -->
+    <script>
+      // = require jquery
+      var index = <%=index%>;
+      var encryptedGrid = $('#mini_encrypt' + (index + 1000)).text();
+      var board = $('#mini-board' + (index + 1000)).children()
+        .children()
+      decryptMini(encryptedGrid, board)
+    </script>
+    <% end %>
+    <!-- ? -->
 
-</div> <!-- end col -->
-<% end %><!-- end loop -->
-</ul><!-- end container -->
+  </div>
+  <!-- end col -->
+  <% end %>
+  <!-- end loop -->
+</ul>
+<!-- end container -->

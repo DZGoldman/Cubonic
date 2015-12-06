@@ -4,6 +4,32 @@
 </div>
 <% end %>
 
+<div class="container">
+  <div class="row user-puzzles-header">
+    <h2 class="col-md-6">  Created by
+        <%=@puzzle.user.user_name%> in
+      <%= @puzzle.clicks_created %>
+      clicks.
+      <%if @puzzle.best_solver %></h2>
+
+    <!-- <h1 class="col-md-6">
+      <% if logged_in? %>
+      <%= link_to "Create A New Puzzle", new_puzzle_path %>
+      <% end %>
+    </h1> -->
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      Last Solved by
+      <%= @puzzle.best_solver %>
+      <% else %>
+      Yet to be solved.
+      <% end %>
+      Click on this grid...    ...until it looks like this grid.
+      Clicking rotates all of the cubes in a 3x3 radius. No clicking on the edges.
+    </div >
+  </div>
+</div>
 
 <div class="container creator-header-container">
   <div class="row creator-header-row">
@@ -11,19 +37,12 @@
 
 
 
-      <h3 class="col-md-4 creator-header" >
-        Created by
-          <%=@puzzle.user.user_name%> in
-        <%= @puzzle.clicks_created %>
-        clicks.
-        <%if @puzzle.best_solver %>
-        Last Solved by
-        <%= @puzzle.best_solver %>
-        <% else %>
-        Yet to be solved.
-        <% end %>
-      </h3>
+      <h3 class="col-md-6 creator-header" >
 
+      </h3>
+      <h3 class="col-md-6 creator-header">
+
+    </h3>
 
   </div>
 </div>
@@ -77,13 +96,6 @@
     <p class='col-md-6 directions'>
 
     </p>
-  </div>
-  <div class"row">
-    <p class='col-md-4 directions'>
-      Click on this grid...    ...until it looks like this grid.
-      Clicking rotates all of the cubes in a 3x3 radius. No clicking on the edges.
-    </p>
-
   </div>
 </div>
 
