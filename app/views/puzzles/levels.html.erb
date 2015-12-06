@@ -4,13 +4,15 @@
 </div>
 <% end %>
 
-<ul>
-  <div class="container">
-    <div class="row">
-      <% @puzzles.reverse.each_with_index do |puzzle, index| %>
+<ul class="container">
 
-      <%# render a mini board with unique id %>
-      <li class='level-mini-li'>
+    <!-- <div class="row"> -->
+    <% @puzzles.reverse.each_with_index do |puzzle, index| %>
+
+    <%# render a mini board with unique id %>
+    <div class="col-md-6">
+
+      <div class='level-mini-li'>
         <%= link_to puzzle_path(puzzle) do %>
         <div class="board level_board" id="level_board<%=index%>">
           <%= render partial: 'levelgrid' %>
@@ -29,7 +31,7 @@
           decryptMini(encryptedGrid, board)
         </script>
 
-        <div class="links">
+        <!-- <div class="links">
 
           <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
 
@@ -40,11 +42,10 @@
           <br>
           <% end %>
           <%end%>
-        </div>
+        </div> -->
+      </div>
+    </div>
 
-      </li>
-        </div>
-      <% end %>
-
-  </div>
+    <% end %>
+  <!-- </div> -->
 </ul>

@@ -1,16 +1,18 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
+<% end %>
+
 <%= form_for :session, url: login_path,  :html => {:class => "container"} do |f| %>
-    <h1>Welcome To Olay</h1>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><h1><%= message %></h1></div>
-    <% end %>
-    <div class="form">
+    <h1>Log in</h1>
+    <br>
+    <div class="login-form">
     <%= f.label :user_name, "Username:"%>
-    <%= f.text_field :user_name%>
+    <%= f.text_field :user_name%> <br><br>
     <%= f.label :password, "Password:"%>
-    <%= f.password_field :password%>
-    
-    <%= f.submit "Log In"%>
-  </div>
+    <%= f.password_field :password%> <br><br>
+    <%= f.submit "Log In"%><br><br>
+
   <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   <%= link_to "Sign in as Guest!", puzzles_path %>
+  </div>
 <%end%>

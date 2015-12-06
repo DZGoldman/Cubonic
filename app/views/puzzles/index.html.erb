@@ -10,56 +10,66 @@
   <div class="row user-puzzles-header">
     <h1 class="col-md-6">User-Created Puzzles</h1>
 
-    <h1 class="col-md-6">
+    <!-- <h1 class="col-md-6">
       <% if logged_in? %>
       <%= link_to "Create A New Puzzle", new_puzzle_path %>
       <% end %>
-    </1>
+    </h1> -->
   </div>
   <div class="row">
     <div class="col-md-6">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia d
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia d
     </div >
   </div>
 </div>
 
+<ul class="container">
+  <!-- <div class="row"> -->
 
-<ul class="puzzles-container">
-  <% @puzzles.reverse.each_with_index do |puzzle, index| %>
+    <% @puzzles.reverse.each_with_index do |puzzle, index| %>
+    <% unless puzzle.user_id==1 %>
 
-  <%# render a mini board with unique id %>
-  <li class='index-mini-li'>
-    <%= link_to puzzle_path(puzzle) do %>
-    <div class="board mini_board" id="mini_board<%=index%>">
-      <%= render partial: 'minigrid' %>
-    </div>
-    <% end %>
-    <%# fetch encrypted string to feed to encrypt function %>
-    <div class="hidden" id="mini_encrypt<%=index%>"><%= puzzle.pattern%></div>
 
-    <%# decrypt, put onto each mini board %>
-    <script>
-      // = require jquery
-      var index = <%=index%>;
-      var encryptedGrid = $('#mini_encrypt' + index).text();
-      var board = $('#mini_board' + index).children()
-        .children()
-      decryptMini(encryptedGrid, board)
-    </script>
 
-    <div class="links">
+    <div class="col-md-3">
 
-      <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+      <%# render a mini board with unique id %>
+      <div class='index-mini-li'>
+        <%= link_to puzzle_path(puzzle) do %>
+        <div class="board mini_board" id="mini_board<%=index%>">
+          <%= render partial: 'minigrid' %>
+        </div>
+        <% end %>
+        <%# fetch encrypted string to feed to encrypt function %>
+        <div class="hidden" id="mini_encrypt<%=index%>"><%= puzzle.pattern%></div>
 
-      <% unless current_user==nil %>
-      <%if current_user==puzzle.user || current_user.is_admin %>
-      <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>
-      <%= link_to "Edit", edit_puzzle_path(puzzle) %>
-      <br>
+        <%# decrypt, put onto each mini board %>
+        <script>
+          // = require jquery
+          var index = <%=index%>;
+          var encryptedGrid = $('#mini_encrypt' + index).text();
+          var board = $('#mini_board' + index).children()
+            .children()
+          decryptMini(encryptedGrid, board)
+        </script>
+<!--
+        <div class="links">
+
+          <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
+
+          <% unless current_user==nil %>
+          <%if current_user==puzzle.user || current_user.is_admin %>
+          <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>
+          <%= link_to "Edit", edit_puzzle_path(puzzle) %>
+          <br>
+          <% end %>
+          <%end%>
+        </div> -->
+
+      </div>
+    </div> <!-- col -->
       <% end %>
-      <%end%>
-    </div>
-
-  </li>
-  <% end %>
-</ul>
+    <% end %>
+  <!-- </div><!-- row --> -->
+</ul> <!-- contailer -->

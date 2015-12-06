@@ -31,9 +31,9 @@
 
       </div>
       <div class='col-sm-2'>
-        </div>
       </div>
     </div>
+  </div>
   </div>
 
   <nav class="navbar nav-tabs navigation-bar">
@@ -51,6 +51,9 @@
         </div>
         <div class="btn navbar-btn" type="div">
           <%=link_to "Log Out", logout_path %>
+        </div>
+        <div class="btn navbar-btn" type="div">
+          <%= link_to "Create A New Puzzle", new_puzzle_path %>
         </div>
         <% else %>
           <div class="btn navbar-btn" type="div">

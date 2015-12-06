@@ -1,22 +1,24 @@
-<h1>so you want to sign up, do ya?</h1>
+<% if @user.errors.any? %>
+<div class="error_messages">
+  <ul>
+    <% for message in @user.errors.full_messages %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
 <%= form_for @user, :html => {:class => "container"} do |f| %>
     <h1>Sign Up</h1>
-    <% if @user.errors.any? %>
-    <div class="error_messages">
-      <ul>
-        <% for message in @user.errors.full_messages %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
-    <div class="form">
+
+    <div class="signup-form">
     <%= f.label :user_name, "Username:"%><br>
-    <%= f.text_field :user_name%><br>
+    <%= f.text_field :user_name%><br><br>
     <%= f.label :email, "Email:"%><br>
-    <%= f.text_field :email%><br>
+    <%= f.text_field :email%><br><br>
     <%= f.label :password, "Password:"%><br>
-    <%= f.password_field :password%><br>
+    <%= f.password_field :password%><br><br>
     <%= f.label :password_confirmation, "Confirm Password:"%><br>
     <%= f.password_field :password_confirmation%><br><br>
     <%= f.submit%><br>
