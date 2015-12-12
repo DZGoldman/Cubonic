@@ -3,10 +3,10 @@
 
 <head>
 
-  <title>Olay</title>
+  <title>Cubonic</title>
   <div class="container-fluid header-bar">
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
+      <div class="col-md-1 col-md-offset-1 logo_container">
         <div id='logo_container'>
           <%= link_to root_path do %>
             <div class='show-front' type='logo'>
@@ -20,18 +20,18 @@
             <% end %>
         </div>
       </div>
-      <div class="col-md-2" id=''>
-        <br>
-        <br>
+      <div class="col-md-2" id='title'>
+        <!-- <br>
+        <br> -->
         <h1> Cubonic</h1>
       </div>
-      <div class='col-sm-5'>
+      <!-- <div class='col-sm-5'>
 
 
 
       </div>
       <div class='col-sm-2'>
-      </div>
+      </div> -->
     </div>
   </div>
   </div>
@@ -41,13 +41,14 @@
 
       <% if logged_in? %>
         <div class="btn navbar-btn" type="div">
-          <%= link_to current_user.user_name, user_path(current_user) %>
+          <%= link_to "Home", root_path %>
         </div>
         <div class="btn navbar-btn" type="div">
           <%= link_to "User Generated Puzzles", puzzles_path %>
         </div>
         <div class="btn navbar-btn" type="div">
-          <%= link_to "Home", root_path %>
+          <%= link_to current_user.user_name, user_path(current_user) %>
+
         </div>
         <div class="btn navbar-btn" type="div">
           <%=link_to "Log Out", logout_path %>
@@ -57,13 +58,14 @@
         </div>
         <% else %>
           <div class="btn navbar-btn" type="div">
-            <%=link_to "Log In", login_path %>
+              <%= link_to "Home", root_path %>
+
           </div>
           <div class="btn navbar-btn" type="div">
             <%= link_to "User Generated Puzzles", puzzles_path %>
           </div>
           <div class="btn navbar-btn" type="div">
-            <%= link_to "Home", root_path %>
+          <%=link_to "Log In", login_path %>
           </div>
           <div class="btn navbar-btn" type="div">
             <%=link_to "Sign Up", new_user_path %>

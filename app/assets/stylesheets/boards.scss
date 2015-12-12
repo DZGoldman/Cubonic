@@ -1,6 +1,6 @@
 
 .board {
-  width: 390px;
+  width: 540px;
   font-size: 0;
   background: rgb(32, 32, 32);
 
@@ -10,8 +10,8 @@
 }
 .box {
   background-color: black;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   float: left;
   perspective: 1000px;
   // border: 3px solid black
