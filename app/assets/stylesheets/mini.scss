@@ -5,7 +5,7 @@
 
 .index-mini-li, .user-mini-li{
  // font-size: 25px;
- margin: 35px;
+ margin: 20px;
  // border: 5px solid blue;
  // border-style: groove;
  // border-radius: 15px;
@@ -17,21 +17,22 @@
 }
 
 .mini_board {
-  width: 180px;
-  height: 180px;
+  width: 144px;
+  height: 144px;
   // border: 5px solid blue;
   // border-style: groove;
 }
 .mini_box {
   background_color: white;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   float: left;
 }
 
-.links{
-  color: black !important;
-  font-size: 24px;
+.user-puzzle-options{
+  // color: black !important;
+  font-size: 15px;
+  text-indent: 10px
 }
 
 //

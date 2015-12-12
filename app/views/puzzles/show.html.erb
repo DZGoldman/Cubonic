@@ -46,9 +46,9 @@
 
   </div>
 </div>
-<% unless @puzzle.notes=="" %>
+<% if @puzzle.notes!="" && @puzzle.user_id==1  %>
 <p class="notes">
-  Notes: "<%= @puzzle.notes %>"</p>
+<%= @puzzle.notes %></p>
 <%end %>
 
 

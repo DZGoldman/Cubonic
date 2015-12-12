@@ -47,15 +47,16 @@
           <%= link_to "User Generated Puzzles", puzzles_path %>
         </div>
         <div class="btn navbar-btn" type="div">
+          <%= link_to "Create A New Puzzle", new_puzzle_path %>
+        </div>
+        <div class="btn navbar-btn" type="div">
           <%= link_to current_user.user_name, user_path(current_user) %>
 
         </div>
         <div class="btn navbar-btn" type="div">
           <%=link_to "Log Out", logout_path %>
         </div>
-        <div class="btn navbar-btn" type="div">
-          <%= link_to "Create A New Puzzle", new_puzzle_path %>
-        </div>
+
         <% else %>
           <div class="btn navbar-btn" type="div">
               <%= link_to "Home", root_path %>

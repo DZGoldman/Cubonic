@@ -11,10 +11,11 @@
 
 <nav class="navbar navbar-right navigation-bar">
   <% if logged_in? %>
-  <div class="btn navbar-btn" type="div">  <%= link_to current_user.user_name, user_path(current_user) %></div>
   <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>
   <div class="btn navbar-btn" type="div"><%= link_to "Home", root_path %></div>
-  <div class="btn navbar-btn" type="div">        <%=link_to "Log Out", logout_path %></div>
+  <div class="btn navbar-btn" type="div"><%=link_to "Log Out", logout_path %></div>
+  <div class="btn navbar-btn" type="div">  <%= link_to current_user.user_name, user_path(current_user) %></div>
+
   <% else %>
   <div class="btn navbar-btn" type="div">  <%=link_to "Log In", login_path %></div>
   <div class="btn navbar-btn" type="div"> <%= link_to "User Generated Puzzles", puzzles_path %></div>

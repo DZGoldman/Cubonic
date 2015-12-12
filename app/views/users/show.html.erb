@@ -1,14 +1,14 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <h1 class='col-md-4'><%= @user.user_name%>'s Page</h1>
   </div>
-</div>
+</div> -->
 
 
 <br>
 <div class="container">
   <div class="row">
-    <h2 class='col-md-4'><%= @user.user_name%>'s Puzzles</h2>
+    <h2 class='col-md-4'><%= @user.user_name%>'s Puzzles:</h2>
   </div>
 </div>
 
@@ -27,6 +27,17 @@
       <%# fetch encrypted string to feed to encrypt function %>
       <div class="hidden" id="mini_encrypt<%=index%>"><%= puzzle.pattern%></div>
 
+      <div class="profile-options">
+
+
+      <% unless current_user==nil %>
+      <%if current_user==@user || current_user.is_admin %>
+      <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>
+             <%= link_to "Edit", edit_puzzle_path(puzzle) %>
+      <% end %>
+      <%end%>
+        </div>
+
       <%# decrypt, put onto each mini board %>
       <script>
         // = require jquery
@@ -37,13 +48,9 @@
         decryptMini(encryptedGrid, board)
       </script>
 
-      <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>
-      <% unless current_user==nil %>
-      <%if current_user==@user || current_user.is_admin %>
-      <%= link_to "Delete", puzzle_path(puzzle), method: :delete %>
-      <%= link_to "Edit", edit_puzzle_path(puzzle) %>
-      <% end %>
-      <%end%>
+
+
+
     </div>
   </div>
   <% end %>
@@ -51,11 +58,12 @@
 </ul>
 <!-- container -->
 
-
+<br>
+<br>
 <div class="container">
   <div class="row">
 
-<h2>Puzzles <%= @user.user_name%> has solved</h2>
+    <h2>Puzzles <%= @user.user_name%> has solved:</h2>
   </div>
 </div>
 
@@ -77,6 +85,7 @@
         <!-- <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %> -->
       </div>
       <% end %>
+      
     </div>
     <% end %>
 
