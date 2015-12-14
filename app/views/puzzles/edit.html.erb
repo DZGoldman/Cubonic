@@ -1,4 +1,4 @@
-<h1>Edit Your puzzle</h1>
+<h1 id='new-headline'>Edit Your puzzle</h1>
 
 <div id="pattern"><%=@puzzle.pattern %></div>
 
@@ -8,17 +8,17 @@
   <li><%= error %></li>
   <% end %>
 </ul>
-<p>
+<!-- <p>
   <%= f.label :notes %><br/>
   <%= f.text_area :notes %>
-</p>
+</p> -->
 <p>
   <%= f.text_area :pattern %>
 </p>
 <p>
   <%= f.text_area :clicks_created %>
 </p>
-<p class="submit_button">
+<p class="submit_button" id='create-puzzle'>
   <%= f.submit %>
 </p>
 <% end %>
@@ -27,5 +27,5 @@
   <div , class="board" id="edit_board">
     <%= render partial: 'grid' %>
   </div>
-  <%= render partial: 'buttons' %>
+  <div id="reset-new"  class="button reset">Reset </div>
 </div>

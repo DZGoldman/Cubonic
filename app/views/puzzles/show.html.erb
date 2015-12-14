@@ -6,7 +6,9 @@
 
 <div class="container">
   <div class="row user-puzzles-header">
-    <h2 class="col-md-6">  Created by
+    <h2 class="col-md-6">
+
+        Created by
         <%=@puzzle.user.user_name%> in
       <%= @puzzle.clicks_created %>
       clicks.
@@ -73,14 +75,14 @@
 </div>
 <div class="container">
   <div class="row">
-  <div id="reset" class="button">Reset </div>
+  <div class="reset button" id='reset'>Reset </div>
 
   <% if current_user && current_user.id != @puzzle.user_id %>
   <div class="button" id="win">
     <%= link_to "Solved! Click to record your win", puzzle_path(@puzzle), method: :win  %>
   </div>
   <%else %>
-  <div id="win">
+  <div class= "button" id="win">
     Solved
   </div>
   <% end %>

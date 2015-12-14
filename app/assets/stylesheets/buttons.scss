@@ -1,16 +1,13 @@
-.button:hover {
-  background: #b4c11f;
-}
 
 #reset,#win{
 
   margin-top: 20px;
-  color: rgb(73, 83, 11);
+  // color: rgb(73, 83, 11);
   border-radius: 20px;
-  width: 520px;
-  margin-left: 45px;
+  width: 300px;
+  margin-left: 60px;
   height: 30px;
-  color: black
+  color: black;
 
 }
 
@@ -19,16 +16,12 @@
 }
 
 #win{
-  width: 360px;
-  color: rgb(73, 83, 11);
-  border-radius: 20px;
   display: none;
 }
 
 
 .button {
   background: rgb(29, 136, 72);
-  color: rgb(73, 83, 11);
   font-family: Sans-serif;
   font-size: 20px;
 

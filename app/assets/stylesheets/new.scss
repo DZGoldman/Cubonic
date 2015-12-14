@@ -7,6 +7,7 @@
 #new_board{
   position: relative;
   left: 10px;
+  margin: 20px;
 }
 
 input{
@@ -15,4 +16,23 @@ input{
 
 .login-form, .signup-form{
   font-size: 30px
+}
+
+#new-headline{
+margin: 30px;
+}
+
+#create-puzzle{
+  margin: 10px;
+  margin-left: 30px;
+}
+
+#reset-new{
+  margin-top: 20px;
+  // color: rgb(73, 83, 11);
+  border-radius: 20px;
+  width: 300px;
+  margin-left: 65px;
+  height: 30px;
+  color: black;
 }

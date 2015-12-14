@@ -1,4 +1,4 @@
-<h1>A New Puzzle</h1>
+<h1 id= 'new-headline'>A New Puzzle</h1>
 
 
 
@@ -8,9 +8,9 @@
   <li><%= error %></li>
   <% end %>
 </ul>
-<p>
-  <%= f.label :notes %> (optional)<br><br>
-  <%= f.text_area :notes %><br><br>
+<p id='create-puzzle'>
+  <!-- <%= f.label :notes %> (optional)<br><br>
+  <%= f.text_area :notes %><br><br> -->
   <%= f.submit %><br><br>
 </p>
 <p>
@@ -28,6 +28,6 @@
     <div  class="board" id="new_board">
     <%= render partial: 'grid' %>
     </div>
-    <%= render partial: 'buttons' %>
+    <div id="reset-new"class="button reset">Reset </div>
   </div>
 </div>
