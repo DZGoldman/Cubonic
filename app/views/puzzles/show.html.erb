@@ -12,7 +12,7 @@
         <%=@puzzle.user.user_name%> in
       <%= @puzzle.clicks_created %>
       clicks.
-      <%if @puzzle.best_solver %></h2>
+      </h2>
 
     <!-- <h1 class="col-md-6">
       <% if logged_in? %>
@@ -22,13 +22,19 @@
   </div>
   <div class="row">
     <div class="col-md-4">
+
+
+
+      Click the grid on the left until it matches the grid on the right.
+      Clicking rotates all of the cubes in a 3x3 radius. No clicking on the edges.
+      <br><br>
+      <%if @puzzle.best_solver %>
       Last Solved by
       <%= @puzzle.best_solver %>
       <% else %>
       Yet to be solved.
       <% end %>
-      Click on this grid...    ...until it looks like this grid.
-      Clicking rotates all of the cubes in a 3x3 radius. No clicking on the edges.
+      <br>
     </div >
   </div>
 </div>
@@ -49,9 +55,15 @@
   </div>
 </div>
 <% if @puzzle.notes!="" && @puzzle.user_id==1  %>
-<p class="notes">
-<%= @puzzle.notes %></p>
-<%end %>
+<div class="container">
+  <div class="row">
+    <p class="notes col-md-offset-1">
+    <%= @puzzle.notes %></p>
+
+  </div>
+
+</div>
+  <%end %>
 
 
 <%# put pattern in a hidden div so javascript can access it %>

@@ -1,12 +1,28 @@
-Olay is a logic puzzle CRUD up created in Rails. It is currently hosted on a heroku server.
-Users can create, edit, and delete Puzzles, and play puzzles other users created.
+# Cubonic Readme
+Cubonic is a visual logic puzzle build on the Ruby on Rails stack. Users can attempt to solve puzzles, and can also create their own and post them for other's to attempt.
 
-Models:
-Users- A user is created at a sign up page, and the users session is tracked until the user logs out. Each user has their own profile page, where their created puzzles and solved puzzles are displayed.
 
-Puzzles- The actual grid pattern of the puzzle is stored as a string; the puzzles on the board, when created, are encrypted using jquery, and later, when the puzzle is called, decrypted and put on the board. Puzzles also store the number of clicks that were used in their creation.
+### Approach/Technologies Used
 
-Wins- Join table of Puzzles and Users, stores each instance of a "Win," which are displayed on the users profile page.
+### Models
+**Users:** A user is created at a sign up page, and the users session is tracked until the user logs out. Each user has their own profile page, where their created puzzles and solved puzzles are displayed.
+
+**Puzzles:** The actual grid pattern of the puzzle is stored as a string; the puzzles on the board, when created, are encrypted using jquery, and later, when the puzzle is called, decrypted and put on the board. Puzzles also store the number of clicks that were used in their creation.
+
+**Wins:** Join table of Puzzles and Users, stores each instance of a "Win," which are displayed on the users profile page.
+
+
+### Challenges
+- Routing Puzzle Data
+- Minature Grids
+- Dynamic Cube Gameplay
+
+
+### Special Thanks To...
+- The WDI intructors Will, Zhen, Adam, and especially Jason, for claiming that I "accidentally rediscovered bitmapping", which I can only assume is an exaggeration, but certainly sounds impressive.
+- Ray, for his css advice, and for offhandedly mentioning cubes, sending the project in an entirely new direction.
+- desanddro for this 3dtramsforms guide https://github.com/desandro/3dtransforms 
+
 
 == README
 
