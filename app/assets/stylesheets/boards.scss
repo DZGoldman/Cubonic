@@ -17,6 +17,16 @@
   // border: 3px solid black
 }
 
-// [row="1"]:hover{
-//   tes
-// }
+ // [row="1"]:hover,
+ // [row="9"]:hover,
+ // [col="1"]:hover,
+ // [col="9"]:hover{
+ //  border-top: 5px solid red;
+ //  color: red;
+ //  z-index: 200;
+ // }
+
+ // [type='cube']:hover{
+ //   border: 1px solid red;
+ //     z-index: 200;
+ // }

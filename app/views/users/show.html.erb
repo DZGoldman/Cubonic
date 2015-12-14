@@ -82,10 +82,14 @@
       <%= link_to puzzle_path(@puzzle) do %>
       <div class="board mini_board" id="mini-board<%=index+1000%>">
         <%= render partial: './puzzles/minigrid' %>
-        <!-- <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %> -->
+        <div class="profile-options">
+
+
+        <%= link_to @puzzle.user.user_name, user_path(@puzzle.user) %>
+        </div>
       </div>
       <% end %>
-      
+
     </div>
     <% end %>
 
