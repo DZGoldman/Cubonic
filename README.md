@@ -1,5 +1,7 @@
 # Read Me
-Cubonic is a visual logic puzzle build on the Ruby on Rails stack. Users can attempt to solve puzzles, and can also create their own and post them for other's to attempt.
+Cubonic is a visual logic puzzle build on the Ruby on Rails stack. Users can attempt to solve puzzles, and can also create their own and post them for others to attempt.
+
+
 
 ### Installation Instructions
 
