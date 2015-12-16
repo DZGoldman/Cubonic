@@ -74,8 +74,13 @@ class PuzzlesController < ApplicationController
         @puzzle.save
       end
 
+      if @puzzle.user_id ==1 && @puzzle.id != 10
+        #NOTE redirect to next puzzle instead?
+        redirect_to root_path
+      else
+        redirect_to user_path(current_user)
+      end
 
-      redirect_to user_path(current_user)
   end
 
   def destroy
