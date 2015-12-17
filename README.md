@@ -12,7 +12,7 @@ bundle install
 4. visit url 'localhost:3000'
 ### Approach
 
-I tend to find the strict structure of the Rails framework limiting and frustrating, so my approach for this project was to push it's built in technologies in interesting directions, without relying on additional gems. Thus, the gameplay of the puzzles themselves relies entirely on JQuery in the apps javasript assets, and the 3-dimensional cube transformation are done solely with vanilla css. To save new puzzles into the database, they are encrypted as strings, and decrypted to be put back on the boards. The minuturized puzzle icons are built when the page loads out of html elements.
+I tend to find the strict structure of the Rails framework limiting and frustrating, so my approach for this project was to push it's built in technologies in interesting directions, without relying on additional gems. Thus, the gameplay of the puzzles themselves relies entirely on JQuery in the apps javasript assets, and the 3-dimensional cube transformation are done solely with vanilla css. To save new puzzles into the database, they are encrypted as strings, and decrypted to be put back on the boards. The miniaturized puzzle icons are built when the page loads out of html elements. To pass the information on the board into the database and vice-versa, the encoded puzzle grids are 
 
 ### Technologies Used
 - Ruby on Rails
