@@ -1,11 +1,18 @@
 class PuzzlesController < ApplicationController
 
   def levels
-       @puzzles= User.find_by(user_name:"DZack").puzzles
-      #@puzzles =Puzzle.all
+       @puzzles_unordered= User.find_by(user_name:"DZack").puzzles
+       @puzzles= []
+
+       for i in 1..10
+         @puzzles_unordered.each do |puzzle|
+           if puzzle.notes[-1].to_i==i
+             @puzzles.push(puzzle)
+           end
+         end
+       end
       # instead of all puzzles, only puzzles by DZack (admin)
 
-      # or search through puzzles, find all where user id is DZack's id
   end
   def index
     @puzzles= Puzzle.all
