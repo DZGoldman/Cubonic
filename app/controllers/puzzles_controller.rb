@@ -8,6 +8,10 @@ class PuzzlesController < ApplicationController
          @puzzles_unordered.each do |puzzle|
            if puzzle.notes[-1].to_i==i
              @puzzles.push(puzzle)
+             break
+          #  elsif (puzzle.notes[-2]+puzzle.notes[-1]).to_i==i
+          #    @puzzles.push(puzzle)
+          #    break
            end
          end
        end
