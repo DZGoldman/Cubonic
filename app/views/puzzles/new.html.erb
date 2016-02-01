@@ -8,8 +8,6 @@
   <% end %>
 </ul>
 <p id='create-puzzle'>
-  <!-- <%= f.label :notes %> (optional)<br><br>
-  <%= f.text_area :notes %><br><br> -->
   <%= f.submit %><br><br>
 </p>
 <p>
@@ -32,6 +30,7 @@
 </div>
 
 <script>
+// start encryped grid as emtpy puzzle (to guard for user creating new empty puzzle)
 $('#puzzle_pattern').text("000000000000000000000000000000000000000000000000000000000000000000000000000000000")
 $('#puzzle_clicks_created').text(0)
 </script>
