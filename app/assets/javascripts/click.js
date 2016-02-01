@@ -18,10 +18,9 @@ $(document).ready(function() {
     decrypt(encryptedGrid, $('#edit_board'))
   }
 
-  //click events for each cell - rotate appopriate cubes on click
-  // TODO: refactor as single click event on entire boars
-  $('#click_board, #edit_board, #new_board').children().children().children().click(function(e) {
-    var clickedBox = (e.target).parentNode.parentNode;
+  //click events for boards that target each cell - rotate appopriate cubes on click
+  $('#click_board, #edit_board, #new_board').click(function(e) {
+    var clickedBox = (e.toElement).parentNode.parentNode;
     $clickedBox = $(clickedBox)
 
     //finds box realtive to inputs (example: findBox(2,-1) will return the box 2 to the right and 1 down from the clicked box )
