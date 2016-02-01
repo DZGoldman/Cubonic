@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Note: these seeds for used only for local testing, not for production:
+
 users= User.create([
 {user_name: "DZack", profile_pic: "http://www.fillmurray.com/g/400/500", email: "dzgoldman@wesleynan.edu", is_admin:true},
 {user_name: "Alex", profile_pic: "http://www.fillmurray.com/g/500/400", email: "alex@alex.edu", is_admin:false}
@@ -30,9 +33,3 @@ User.create([
 {user_name: "dzgoldman", profile_pic: "http://www.fillmurray.com/g/100/100", email: "dzgoldman@wesleynan.edu", is_admin:true, password_digest: "hx5617"}
 
 ])
-# puzzles= Puzzle.CreatePuzzles
-#
-# comments= Comment.create([
-# {body: "nice puzzle bro", puzzle_id: 1},
-# {body: "sick bro", puzzle_id: 2},
-# ])

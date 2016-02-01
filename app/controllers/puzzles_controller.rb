@@ -1,5 +1,7 @@
 class PuzzlesController < ApplicationController
 
+  #Custom path:
+  #Get the main puzzles- these are set apart because they are created by the admin, DZack. DZack can add notes to puzzles, so they are sorted by the notes, which end with the level numebr
   def levels
        @puzzles_unordered= User.find_by(user_name:"DZack").puzzles
        @puzzles= []
@@ -54,8 +56,9 @@ class PuzzlesController < ApplicationController
     redirect_to puzzle_path(@puzzle)
   end
 
+  # Custom path:
+  #find all wins of a given user
   def win
-    # Custom path:
       @puzzle= Puzzle.find(params[:id])
       user_id = current_user.id
       #figure out of the win should count:

@@ -8,12 +8,6 @@
 <div class="container">
   <div class="row user-puzzles-header">
     <h1 class="col-md-6">Single Player</h1>
-
-    <!-- <h1 class="col-md-6">
-      <% if logged_in? %>
-      <%= link_to "Create A New Puzzle", new_puzzle_path %>
-      <% end %>
-    </h1> -->
   </div>
   <div class="row">
     <div class="col-md-6 directions-main">
@@ -22,23 +16,16 @@
   </div>
 </div>
 
-
 <ul class="container">
-
-    <!-- <div class="row"> -->
     <% @puzzles.each_with_index do |puzzle, index| %>
-
     <%# render a mini board with unique id %>
     <div class="col-md-6">
-
       <div class='level-mini-li'>
         <div class="level-label">
           <%= puzzle.notes %>
         </div>
         <%= link_to puzzle_path(puzzle) do %>
-
         <div class="board level_board" id="level_board<%=index%>">
-
           <%= render partial: 'levelgrid' %>
         </div>
         <%end %>
@@ -54,6 +41,7 @@
             .children()
           decryptMini(encryptedGrid, board)
         </script>
+
       </div>
     </div>
 

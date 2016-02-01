@@ -1,4 +1,4 @@
-//The 5 colors- these are adjustable here so long as color1 == background-color
+//define side classes:
 var side1 = 'show-front'
 var side2 = 'show-back'
 var side3 = 'show-right'
@@ -8,6 +8,7 @@ var side6 = 'show-bottom'
 
 var sides = [side1, side2, side3, side4, side5, side6];
 
+//The 5 colors- these are adjustable here so long as color1 == background-color
 var color1 = "rgb(8, 101, 61)"
 var color2 = "rgb(23, 241, 208)"
 var color3 = "rgb(232, 23, 23)"
@@ -17,15 +18,9 @@ var color6 = "rgb(126, 2, 240)"
 
 var colors =[color1,color2,color3,color4,color5,color6]
 
-//bump up color, reset after color 5. To be invoked on clicked
+//bump up color, reset after color 5. To be invoked on click
 var rotateCube = function(cube) {
   var currentSide = cube.attr('class')
-  // if (!currentSide) {
-  //     currentSide = side1;
-  // }
-
-  console.log(currentSide);
-  //get rid of current side status
   cube.removeClass();
   switch (currentSide) {
     case side1:
@@ -49,6 +44,7 @@ var rotateCube = function(cube) {
   }
 };
 
-$('[row=1]').mouseover(function () {
-$('[row=1]').attr('background-color', 'red')
-})
+//TODO: outer perimeter (non-clickable) turns red on hover. Not working right now b/c of css transforms on cube
+// $('[row=1]').mouseover(function () {
+// $('[row=1]').attr('background-color', 'red')
+// })

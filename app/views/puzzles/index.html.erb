@@ -9,12 +9,6 @@
 <div class="container">
   <div class="row user-puzzles-header">
     <h1 class="col-md-6">User-Created Puzzles</h1>
-
-    <!-- <h1 class="col-md-6">
-      <% if logged_in? %>
-      <%= link_to "Create A New Puzzle", new_puzzle_path %>
-      <% end %>
-    </h1> -->
   </div>
   <div class="row">
     <div class="col-md-6 directions-users">
@@ -23,27 +17,17 @@
 </div>
 
 <ul class="container">
-  <!-- <div class="row"> -->
-
     <% @puzzles.reverse.each_with_index do |puzzle, index| %>
     <% unless puzzle.user_id==1 %>
-
-
-
     <div class="col-md-3">
-
-      <%# render a mini board with unique id %>
       <div class='index-mini-li'>
         <%= link_to puzzle_path(puzzle) do %>
         <div class="board mini_board" id="mini_board<%=index%>">
           <%= render partial: 'minigrid' %>
         </div>
         <% end %>
-        <%# fetch encrypted string to feed to encrypt function %>
         <div class="hidden" id="mini_encrypt<%=index%>"><%= puzzle.pattern%></div>
-
                 <div class="user-puzzle-options">
-
                   <%= link_to puzzle.user.user_name, user_path(puzzle.user) %>,
                   <%= puzzle.clicks_created %> clicks
                   <% unless current_user==nil %>

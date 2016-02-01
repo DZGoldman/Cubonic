@@ -1,23 +1,8 @@
-//
-// #click_board,
-// #static_board {
-//   float: left;
-//   margin: 30px
-// }
-
-// #show_page_boards {
-//   width: 1250px;
-//   display: inline-block;
-// }
-
-
-
 .directions {
   padding-top: 20px;
   font-style: oblique;
   font-size: 24px;
 }
-
 
 .key{
   display: inline;
@@ -26,14 +11,12 @@
   font-size: 25px;
   text-align: center;
 }
+
 #key1{
   background-color: rgb(8, 101, 61)
-
 }
-
 #key2{
   background-color: rgb(23, 241, 208)
-
 }
 #key3{
 background-color: rgb(232, 23, 23)
@@ -41,31 +24,20 @@ background-color: rgb(232, 23, 23)
 #key4{
 background-color: rgb(11, 191, 31)
 }
-
 #key5{
 background-color: rgb(249, 132, 11)
 }
 #key6{
 background-color: rgb(126, 2, 240)
 }
+
 figure{
   text-align: center;
   font-size: 28px;
   color: black
 }
 
-// .creator-header-container{
-//   background-color: grey;
-//   margin-top: 15px;
-//   margin-bottom: 30px;
-// }
-// .creator-header-row{
-//   background-color: grey;
-//   margin-top: 15px;
-//   margin-bottom: 30px;
-// }
 .creator-header{
-  // background-color: rgb(70, 70, 70);
   margin-top: 15px;
   margin-bottom: 30px;
   height: 40px;
@@ -74,16 +46,8 @@ figure{
   text-align: center
 }
 
-.directions-container{
-
-}
-
 .notes{
   font-size: 35px;
   margin-bottom: 10px;
   font-family: Copperplate, sans-serif;
 }
-
-// .directions{
-//   font-size: 100px;
-// }
