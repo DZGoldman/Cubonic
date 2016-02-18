@@ -80,12 +80,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
 </head>
 
 <body>
 
   <%= yield %>
 
+  <div id='alert'>
+  If you are reading this, your window is either too small (in which case, make it bigger) or you're on a mobile device (in which case, go get a computer).
+  <div>
+
+</body>
 </body>
 
 </html>

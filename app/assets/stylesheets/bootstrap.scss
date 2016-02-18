@@ -6759,3 +6759,41 @@ button.close {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+#alert{
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  margin: 40px;
+  display: none
+}
+/*@media screen and (min-width: 320px) {
+  #non-mobile {
+    display: normal;
+  }
+}*/
+
+@media screen and (max-width: 680px) {
+  div:not(#alert){
+   display: none;
+
+ }
+ #alert{
+   display: block !important;
+ }
+}
+
+/*@media screen and (min-height: 200px) {
+  #non-mobile {
+    display: normal;
+  }
+}*/
+  @media screen and (max-height: 500px) {
+     div:not(#alert){
+      display: none;
+
+    }
+    #alert{
+      display: block !important;
+    }
+  }
