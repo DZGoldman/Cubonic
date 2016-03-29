@@ -8,19 +8,22 @@ class PuzzlesController < ApplicationController
 
        for i in 1..10
          @puzzles_unordered.each do |puzzle|
-           puts 'notes'
-           puts i
-           puts puzzle.notes
-
-           level = puzzle.notes.split(" ")[1]
-           if level==i
-             @puzzles.push(puzzle)
-             break
+          #  puts 'notes'
+          #  puts i
+          #  puts puzzle.notes
+          if puzzle.notes
+            level = puzzle.notes.split(" ")[1].to_i
+             if level==i
+               @puzzles.push(puzzle)
+               break
+             end
            end
          end
        end
       # instead of all puzzles, only puzzles by DZack (admin)
-
+      puts 'puzzzzzzzllllleees'
+      puts @puzzles.length
+      puts 'end puzzles'
   end
   def index
     @puzzles= Puzzle.all
