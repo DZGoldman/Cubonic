@@ -12,10 +12,8 @@ class PuzzlesController < ApplicationController
            puts i
            puts puzzle.notes
 
-           if puzzle.notes[-1].to_i==i
-             @puzzles.push(puzzle)
-             break
-           elsif (puzzle.notes[-2]+puzzle.notes[-1]).to_i==i
+           level = puzzle.notes.split(" ")[1]
+           if level==i
              @puzzles.push(puzzle)
              break
            end
