@@ -8,6 +8,10 @@ class PuzzlesController < ApplicationController
 
        for i in 1..10
          @puzzles_unordered.each do |puzzle|
+           puts 'notes'
+           puts i
+           puts puzzle.notes
+
            if puzzle.notes[-1].to_i==i
              @puzzles.push(puzzle)
              break
