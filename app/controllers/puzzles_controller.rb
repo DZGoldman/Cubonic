@@ -4,23 +4,26 @@ class PuzzlesController < ApplicationController
   #Get the main puzzles- these are set apart because they are created by the admin, DZack. DZack can add notes to puzzles, so they are sorted by the notes, which end with the level numebr
   def levels
 
-       @puzzles_unordered= User.find_by(user_name:"DZack").puzzles
-       @puzzles= []
+       @puzzles= User.find_by(user_name:"DZack").puzzles
+       len =@puzzles.length
+       while found
+         found = false
+         @puzzles.each_with_index do |puzzle, i|
+           break if i == len-1
 
-       for i in 1..10
-         @puzzles_unordered.each do |puzzle|
-          if puzzle.notes
-            level = puzzle.notes.split(" ")[1].to_i
-             if level==i
-               @puzzles.push(puzzle)
-               break
-             end
+           puzzle_num = puzzle.split(' ')[1]
+           next_puzzle_num = @puzzles[i+1].split(' ')[1]
+
+           if puzzle_num > next_puzzle_num
+             found=true
+             @puzzles[i], @puzzles[i+1] = @puzzles[i+1], @puzzles[i]
            end
          end
        end
       # instead of all puzzles, only puzzles by DZack (admin)
 
   end
+
   def index
     @puzzles= Puzzle.all
   end
