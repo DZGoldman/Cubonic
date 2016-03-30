@@ -9,9 +9,10 @@ class PuzzlesController < ApplicationController
        found = true
        while found
          found = false
+         puts @puzzles[0].notes
          @puzzles.each_with_index do |puzzle, i|
            break if i == len-1
-           puts i
+
            puzzle_num = puzzle.notes.split(' ')[1]
            next_puzzle_num = @puzzles[i+1].notes.split(' ')[1]
 
@@ -22,7 +23,8 @@ class PuzzlesController < ApplicationController
          end
        end
       # instead of all puzzles, only puzzles by DZack (admin)
-
+        puts @puzzles
+       @puzzles
   end
 
   def index
