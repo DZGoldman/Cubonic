@@ -4,22 +4,34 @@ class PuzzlesController < ApplicationController
   #Get the main puzzles- these are set apart because they are created by the admin, DZack. DZack can add notes to puzzles, so they are sorted by the notes, which end with the level numebr
   def levels
 
-       @puzzles= User.find_by(user_name:"DZack").puzzles
+       @records= User.find_by(user_name:"DZack").puzzles
+       @puzzles = []
+
+       @records.each do |puzzle|
+         @puzzles.push(puzzle)
+       end
        len =@puzzles.length
        found = true
        puts 'start'
        while found
          found = false
-         puts @puzzles[0].notes
+        #  puts @puzzles[0].notes
          @puzzles.each_with_index do |puzzle, i|
            break if i == len-1
 
-           puzzle_num = puzzle.notes.split(' ')[1]
-           next_puzzle_num = @puzzles[i+1].notes.split(' ')[1]
-
+           puzzle_num = puzzle.notes.split(' ')[1].to_i
+           next_puzzle_num = @puzzles[i+1].notes.split(' ')[1].to_i
            if puzzle_num > next_puzzle_num
              found=true
+            #  puts 'pre:'
+            # puts @puzzles.map{|p| p.notes.split(' ')[1].to_i }
+            #  print puzzle_num, ' ', next_puzzle_num
+            #  puts ''
+            #  puts 'post:'
+            # puts @puzzles.class
              @puzzles[i], @puzzles[i+1] = @puzzles[i+1], @puzzles[i]
+            #  puts @puzzles.map{|p| p.notes.split(' ')[1].to_i }
+            #  puts ''
            end
          end
        end
