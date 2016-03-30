@@ -3,14 +3,12 @@ class PuzzlesController < ApplicationController
   #Custom path:
   #Get the main puzzles- these are set apart because they are created by the admin, DZack. DZack can add notes to puzzles, so they are sorted by the notes, which end with the level numebr
   def levels
+
        @puzzles_unordered= User.find_by(user_name:"DZack").puzzles
        @puzzles= []
 
        for i in 1..10
          @puzzles_unordered.each do |puzzle|
-          #  puts 'notes'
-          #  puts i
-          #  puts puzzle.notes
           if puzzle.notes
             level = puzzle.notes.split(" ")[1].to_i
              if level==i
@@ -21,9 +19,7 @@ class PuzzlesController < ApplicationController
          end
        end
       # instead of all puzzles, only puzzles by DZack (admin)
-      puts 'puzzzzzzzllllleees'
-      puts @puzzles.length
-      puts 'end puzzles'
+
   end
   def index
     @puzzles= Puzzle.all
