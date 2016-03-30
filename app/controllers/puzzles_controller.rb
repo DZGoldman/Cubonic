@@ -6,6 +6,7 @@ class PuzzlesController < ApplicationController
 
        @puzzles= User.find_by(user_name:"DZack").puzzles
        len =@puzzles.length
+       found = false
        while found
          found = false
          @puzzles.each_with_index do |puzzle, i|
