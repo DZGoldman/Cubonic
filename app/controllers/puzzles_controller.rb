@@ -7,6 +7,7 @@ class PuzzlesController < ApplicationController
        @puzzles= User.find_by(user_name:"DZack").puzzles
        len =@puzzles.length
        found = true
+       puts 'start'
        while found
          found = false
          puts @puzzles[0].notes
@@ -23,6 +24,7 @@ class PuzzlesController < ApplicationController
          end
        end
       # instead of all puzzles, only puzzles by DZack (admin)
+      puts 'done'
         puts @puzzles
        @puzzles
   end
