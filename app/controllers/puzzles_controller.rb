@@ -11,7 +11,7 @@ class PuzzlesController < ApplicationController
          found = false
          @puzzles.each_with_index do |puzzle, i|
            break if i == len-1
-
+           puts i
            puzzle_num = puzzle.notes.split(' ')[1]
            next_puzzle_num = @puzzles[i+1].notes.split(' ')[1]
 
