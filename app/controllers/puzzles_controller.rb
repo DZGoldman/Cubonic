@@ -64,6 +64,7 @@ class PuzzlesController < ApplicationController
   end
 
   def new
+    redirect_to '/login' unless logged_in?
     @puzzle=Puzzle.new
   end
 
@@ -80,6 +81,7 @@ class PuzzlesController < ApplicationController
   # Custom path:
   #find all wins of a given user
   def win
+      redirect_to '/login' unless logged_in?
       @puzzle= Puzzle.find(params[:id])
       user_id = current_user.id
       #figure out of the win should count:
@@ -111,7 +113,8 @@ class PuzzlesController < ApplicationController
 
       if @puzzle.user_id ==1 && @puzzle.id != 10
         #NOTE redirect to next puzzle instead?
-        redirect_to root_path
+        next_puzzle = Puzzle.find((params[:id].to_i+1).to_s)
+        redirect_to puzzle_path(next_puzzle)
       else
         redirect_to user_path(current_user)
       end
