@@ -50,7 +50,9 @@ class PuzzlesController < ApplicationController
   end
 
   def edit
+    redirect_to '/login' unless logged_in?
     @puzzle=Puzzle.find(params[:id])
+    redirect_to logout_path unless current_user.id == @puzzle.user_id
   end
 
   def update
